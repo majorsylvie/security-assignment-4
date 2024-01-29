@@ -1,5 +1,13 @@
 import requests
-import logging
+
+debug = False
+
+def dlog(string):
+    if debug:
+        print(string)
+    else:
+        return
+
 """
 for a webstite:
     request http
@@ -33,20 +41,22 @@ def try_url_and_get_scheme(domain,https=False):
 
     """
 
-    if https is None:
+    if not https:
         prefix = 'http://'
     else:
         prefix = 'https://'
 
     test_url = prefix + test_domain 
 
+    dlog(f"querying url: {test_url}")
     try:
         response = requests.get(test_url, timeout=TIMEOUT)
     except requests.exceptions.RequestException as e:  
-        logging.warning(f"failed with exception: {e}")
+        dlog(f"failed with exception: {e}")
         return (None,None)
 
     response_url = response.url
+    dlog(f"response url: {response_url}")
 
     scheme = response_url.split(":")[0]
     status_code = response.status_code
@@ -81,18 +91,22 @@ def return_quadrant_for_domain(domain):
     HTTPS='https'
     HTTP='http'
 
+    dlog(f"http scheme : {http_request_scheme}")
+
     if http_request_scheme == HTTPS:
         # if a site redirect HTTP to HTTPS
         # that means it's only accessible on HTTPS
-        return HTTPS_ONLY
+        return HTTPS_ONLY,http_status_code
 
     # don't cre about https response code
     https_request_scheme,_ = try_url_and_get_scheme(domain,https=True)
 
     # this should never happen!
     if https_request_scheme == HTTP:
-        logging.error(f"HTTPS request returned HTTP scheme, sad :(")
+        dlog(f"HTTPS request returned HTTP scheme, sad :(")
 
+
+    dlog(f"https scheme: {https_request_scheme}")
 
     # punnet square of responses
     if http_request_scheme is None and https_request_scheme is None:
@@ -114,10 +128,11 @@ if __name__ == "__main__":
         "facebook.com",
         "github.com",
         "chicagoreader.com",
+        "washington.edu",
         "itturnsoutgrantdoesnotlikehotdogs.fyi",
         "squid-cache.org"
     ]
-# scheme = try_url_and_get_scheme(test_domain)
+    
 for test_domain in test_domains:
-    scheme = return_quadrant_for_domain(test_domain)
-    print(f"{test_domain} : scheme: {scheme}")
+    scheme,status_code = return_quadrant_for_domain(test_domain)
+    print(f"{test_domain} : scheme: {scheme} : status_code: {status_code}")
