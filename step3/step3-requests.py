@@ -30,6 +30,7 @@ def try_url_and_get_scheme(domain,https=False):
     Outputs:
         if successful, outputs the scheme of the response.url
         if it fails, return None
+
     """
 
     if https is None:
@@ -43,11 +44,13 @@ def try_url_and_get_scheme(domain,https=False):
         response = requests.get(test_url, timeout=TIMEOUT)
     except requests.exceptions.RequestException as e:  
         logging.warning(f"failed with exception: {e}")
-        return None
+        return (None,None)
 
     response_url = response.url
 
-    return response_url.split(":")[0]
+    scheme = response_url.split(":")[0]
+    status_code = response.status_code
+    return (scheme,status_code)
 
 def return_quadrant_for_domain(domain):
     """
@@ -68,8 +71,7 @@ def return_quadrant_for_domain(domain):
             both HTTP and HTTPS requests
         'neither'
     """
-    http_request_scheme = try_url_and_get_scheme(domain,https=False)
-
+    http_request_scheme,http_status_code = try_url_and_get_scheme(domain,https=False)
 
     HTTP_ONLY='HTTPonly'
     HTTPS_ONLY='HTTPSonly'
@@ -84,7 +86,8 @@ def return_quadrant_for_domain(domain):
         # that means it's only accessible on HTTPS
         return HTTPS_ONLY
 
-    https_request_scheme = try_url_and_get_scheme(domain,https=True)
+    # don't cre about https response code
+    https_request_scheme,_ = try_url_and_get_scheme(domain,https=True)
 
     # this should never happen!
     if https_request_scheme == HTTP:
@@ -93,16 +96,16 @@ def return_quadrant_for_domain(domain):
 
     # punnet square of responses
     if http_request_scheme is None and https_request_scheme is None:
-        return NEITHER_HTTP_NOR_HTTPS
+        return NEITHER_HTTP_NOR_HTTPS,None
 
     elif http_request_scheme == HTTP and https_request_scheme is None:
-        return HTTP_ONLY
+        return HTTP_ONLY,http_status_code
 
     elif http_request_scheme is None and https_request_scheme == HTTPS:
-        return HTTPS_ONLY
+        return HTTPS_ONLY,http_status_code
 
     elif http_request_scheme == HTTP and https_request_scheme == HTTPS:
-        return NEITHER_HTTP_NOR_HTTPS
+        return BOTH_HTTP_AND_HTTPS,http_status_code
 
 
 if __name__ == "__main__":
