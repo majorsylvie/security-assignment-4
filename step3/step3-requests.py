@@ -40,6 +40,9 @@ def try_url_and_get_scheme(domain,https=False):
     except requests.exceptions.RequestException as e:  
         dlog(f"failed with exception: {e}")
         return (None,None)
+    except:
+        dlog(f"OTHER EXCEPTION ON GET")
+        return (None,None)
 
     response_url = response.url
     dlog(f"response url: {response_url}")
@@ -79,10 +82,6 @@ def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
 
     dlog(f"http scheme : {http_request_scheme}")
 
-    if http_request_scheme == HTTPS:
-        # if a site redirect HTTP to HTTPS
-        # that means it's only accessible on HTTPS
-        return HTTPS_ONLY,http_status_code
 
     # don't cre about https response code
     https_request_scheme,https_status_code = try_url_and_get_scheme(domain,https=True)
@@ -113,6 +112,9 @@ def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
 
     elif http_request_scheme == HTTP and https_request_scheme == HTTPS:
         return BOTH_HTTP_AND_HTTPS,status_code
+
+    else:
+        return None,None
 
 def test_handful():
     test_domains = [
