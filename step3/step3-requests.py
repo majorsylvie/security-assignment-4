@@ -159,6 +159,8 @@ def test_small_topsites():
 
     # https://stackoverflow.com/questions/29550414/how-can-i-split-a-column-of-tuples-in-a-pandas-dataframe
     df[['HTTP availability','status code']] = pd.DataFrame(df['tuple_output'].tolist(), index=df.index)
+    # now drop the intermediate column
+    df.drop(columns=['tuple_output'])
     print(df)
 
 
