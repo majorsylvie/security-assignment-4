@@ -48,7 +48,7 @@ def try_url_and_get_scheme(domain,https=False):
     else:
         prefix = 'https://'
 
-    test_url = prefix + test_domain 
+    test_url = prefix + domain 
 
     dlog(f"querying url: {test_url}")
     try:
@@ -88,7 +88,7 @@ def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
     HTTP_ONLY='HTTPonly'
     HTTPS_ONLY='HTTPSonly'
     BOTH_HTTP_AND_HTTPS='both'
-    NEITHER_HTTP_NOR_HTTPS='neiher'
+    NEITHER_HTTP_NOR_HTTPS='neither'
 
     HTTPS='https'
     HTTP='http'
@@ -148,13 +148,17 @@ def test_handful():
 def try_domain_from_pandas_row(row):
     domain = row['domain']
     scheme,status_code = return_quadrant_for_domain(domain)
+    return scheme,status_code
     
 
 
 def test_small_topsites():
     df = pd.read_csv("topsite_small.csv")
     ROW = 1
-    # application = df.apply(try_url_and_get_scheme()
+    df['tuple_output'] = df.apply(try_domain_from_pandas_row, axis=ROW)
+
+    # https://stackoverflow.com/questions/29550414/how-can-i-split-a-column-of-tuples-in-a-pandas-dataframe
+    df[['HTTP availability','status code']] = pd.DataFrame(df['tuple_output'].tolist(), index=df.index)
     print(df)
 
 
