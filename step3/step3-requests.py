@@ -137,7 +137,7 @@ def try_domain_from_pandas_row(row):
 
 
 def test_small_topsites():
-    df = pd.read_csv("topsite_small.csv")
+    df = pd.read_csv("topsite_small.csv",names=['ranking','domain'])
     ROW = 1
     application = df.apply(try_domain_from_pandas_row, axis=ROW)
 
@@ -147,7 +147,7 @@ def test_small_topsites():
 
 
 def try_csv(csv_path="topsite_small.csv"):
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, names=['ranking','domain'])
     ROW = 1
     application = df.apply(try_domain_from_pandas_row, axis=ROW)
 
@@ -160,16 +160,18 @@ def try_csv(csv_path="topsite_small.csv"):
     output_path = csv_path + "OUTPUT.csv"
     
     # requested output CSV names from assignment
-    if csv_path = TOPSITES:
+    if csv_path == TOPSITES:
         output_path = "step3-topsites-requests.csv"
-    elif csv_path = OTHERSITES:
+    elif csv_path == OTHERSITES:
         output_path = "step3-othersites-requests.csv"
 
+    if output_path == csv_path:
+        output_path += "_1.csv"
 
     print(df)
-    df.to_csv(csv_path
+    df.to_csv(output_path)
 
 if __name__ == "__main__":
-    
-    try_csv()
+    try_csv(TOPSITES)
+    try_csv(OTHERSITES)
 
