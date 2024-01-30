@@ -4,32 +4,16 @@ from typing import Tuple
 
 debug = False
 
+# thanks alec
 def dlog(string):
     if debug:
         print(string)
     else:
         return
 
-"""
-for a webstite:
-    request http
-    if we redirect:
-        output: HTTPSonly
-    if http fails:
-        make https request
-
-    determin out:
-        if both failed:
-            output neither
-        if http succeeded and https failed:
-            output HTTPonly
-        if http failed and https succeeded:
-            output HTTPSonly
-        if both succeded:
-            output both
-"""
-
 TIMEOUT = 0.5
+TOPSITES = "step0-topsites.csv"
+OTHERSITES = "step0-othersites.csv"
 
 def try_url_and_get_scheme(domain,https=False):
     """
@@ -155,15 +139,37 @@ def try_domain_from_pandas_row(row):
 def test_small_topsites():
     df = pd.read_csv("topsite_small.csv")
     ROW = 1
-    df['tuple_output'] = df.apply(try_domain_from_pandas_row, axis=ROW)
+    application = df.apply(try_domain_from_pandas_row, axis=ROW)
 
     # https://stackoverflow.com/questions/29550414/how-can-i-split-a-column-of-tuples-in-a-pandas-dataframe
-    df[['HTTP availability','status code']] = pd.DataFrame(df['tuple_output'].tolist(), index=df.index)
-    # now drop the intermediate column
-    df.drop(columns=['tuple_output'])
+    df[['HTTP availability','status code']] = pd.DataFrame(application.tolist(), index=df.index)
     print(df)
 
 
+def try_csv(csv_path="topsite_small.csv"):
+    df = pd.read_csv(csv_path)
+    ROW = 1
+    application = df.apply(try_domain_from_pandas_row, axis=ROW)
+
+    # https://stackoverflow.com/questions/29550414/how-can-i-split-a-column-of-tuples-in-a-pandas-dataframe
+    df[['HTTP availability','status code']] = pd.DataFrame(application.tolist(), index=df.index)
+
+    # actually save the output to avoid misery of a useless long run
+    
+    # default path for testing input
+    output_path = csv_path + "OUTPUT.csv"
+    
+    # requested output CSV names from assignment
+    if csv_path = TOPSITES:
+        output_path = "step3-topsites-requests.csv"
+    elif csv_path = OTHERSITES:
+        output_path = "step3-othersites-requests.csv"
+
+
+    print(df)
+    df.to_csv(csv_path
+
 if __name__ == "__main__":
-    test_small_topsites()
+    
+    try_csv()
 
