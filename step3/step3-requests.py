@@ -1,4 +1,6 @@
+import pandas as pd
 import requests
+from typing import Tuple
 
 debug = False
 
@@ -62,7 +64,7 @@ def try_url_and_get_scheme(domain,https=False):
     status_code = response.status_code
     return (scheme,status_code)
 
-def return_quadrant_for_domain(domain):
+def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
     """
     function to take a domain name, make at most 2 GET requests
         always makes an HTTP request
@@ -99,12 +101,19 @@ def return_quadrant_for_domain(domain):
         return HTTPS_ONLY,http_status_code
 
     # don't cre about https response code
-    https_request_scheme,_ = try_url_and_get_scheme(domain,https=True)
+    https_request_scheme,https_status_code = try_url_and_get_scheme(domain,https=True)
 
     # this should never happen!
     if https_request_scheme == HTTP:
         dlog(f"HTTPS request returned HTTP scheme, sad :(")
 
+    # if we get both HTTPS and HTTP status codes, then only pick HTTPS
+    status_code = None
+    if https_status_code is not None:
+        dlog(f"choosing only HTTPS status code when given both HTTPS: {http_status_code}, HTTP: {http_status_code}")
+        status_code = https_status_code
+    else:
+        status_code = http_status_code
 
     dlog(f"https scheme: {https_request_scheme}")
 
@@ -113,16 +122,15 @@ def return_quadrant_for_domain(domain):
         return NEITHER_HTTP_NOR_HTTPS,None
 
     elif http_request_scheme == HTTP and https_request_scheme is None:
-        return HTTP_ONLY,http_status_code
+        return HTTP_ONLY,status_code
 
     elif http_request_scheme is None and https_request_scheme == HTTPS:
-        return HTTPS_ONLY,http_status_code
+        return HTTPS_ONLY,status_code
 
     elif http_request_scheme == HTTP and https_request_scheme == HTTPS:
-        return BOTH_HTTP_AND_HTTPS,http_status_code
+        return BOTH_HTTP_AND_HTTPS,status_code
 
-
-if __name__ == "__main__":
+def test_handful():
     test_domains = [
         "google.com",
         "facebook.com",
@@ -133,6 +141,23 @@ if __name__ == "__main__":
         "squid-cache.org"
     ]
     
-for test_domain in test_domains:
-    scheme,status_code = return_quadrant_for_domain(test_domain)
-    print(f"{test_domain} : scheme: {scheme} : status_code: {status_code}")
+    for test_domain in test_domains:
+        scheme,status_code = return_quadrant_for_domain(test_domain)
+        print(f"{test_domain} : scheme: {scheme} : status_code: {status_code}")
+
+def try_domain_from_pandas_row(row):
+    domain = row['domain']
+    scheme,status_code = return_quadrant_for_domain(domain)
+    
+
+
+def test_small_topsites():
+    df = pd.read_csv("topsite_small.csv")
+    ROW = 1
+    # application = df.apply(try_url_and_get_scheme()
+    print(df)
+
+
+if __name__ == "__main__":
+    test_small_topsites()
+
