@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 from typing import Tuple
 
-debug = False
+debug = True
 
 # thanks alec
 def dlog(string):
@@ -11,7 +11,7 @@ def dlog(string):
     else:
         return
 
-TIMEOUT = 0.5
+TIMEOUT = 10
 TOPSITES = "step0-topsites.csv"
 OTHERSITES = "step0-othersites.csv"
 
