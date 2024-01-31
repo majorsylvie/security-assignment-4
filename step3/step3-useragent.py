@@ -226,7 +226,7 @@ def try_csv(csv_path="topsite_small.csv"):
     df.to_csv(output_path)
 
 if __name__ == "__main__":
-    try_csv("topsite_small.csv")
-    #try_csv(TOPSITES)
-    # try_csv(OTHERSITES)
+    # try_csv("topsite_small.csv")
+    try_csv(TOPSITES)
+    try_csv(OTHERSITES)
 

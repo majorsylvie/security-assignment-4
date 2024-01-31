@@ -80,11 +80,15 @@ def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
     HTTPS='https'
     HTTP='http'
 
+    dlog(f"http scheme : {http_request_scheme}")
+
+
+    # don't cre about https response code
     https_request_scheme,https_status_code = try_url_and_get_scheme(domain,https=True)
 
     # this should never happen!
     if https_request_scheme == HTTP:
-        dlog(f"XXXXXXXXXXXXX HTTPS request returned HTTP scheme, sad :(")
+        dlog(f"HTTPS request returned HTTP scheme, sad :(")
 
     # if we get both HTTPS and HTTP status codes, then only pick HTTPS
     status_code = None
@@ -94,42 +98,22 @@ def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
     else:
         status_code = http_status_code
 
+    dlog(f"https scheme: {https_request_scheme}")
 
     # punnet square of responses
-    dlog(f"INSIDE RETURN========")
-    dlog(f": HTTP  scheme,code : {http_request_scheme}, {http_status_code}")
-    dlog(f": HTTPS scheme,code : {https_request_scheme}, {https_status_code}")
     if http_request_scheme is None and https_request_scheme is None:
-        dlog(f"\tdouble none")
         return NEITHER_HTTP_NOR_HTTPS,None
 
     elif http_request_scheme == HTTP and https_request_scheme is None:
-        dlog(f"\tONLY HTTP")
         return HTTP_ONLY,status_code
 
     elif http_request_scheme is None and https_request_scheme == HTTPS:
-        dlog(f"\tONLY HTTPS")
         return HTTPS_ONLY,status_code
 
     elif http_request_scheme == HTTP and https_request_scheme == HTTPS:
-        dlog(f"\tBOTH HTTPS AND HTTPS ")
         return BOTH_HTTP_AND_HTTPS,status_code
 
-    # if both the schemes returned HTTPS then HTTP was redirected
-    # thus I will record this as HTTPS only since 
-    # HTTP traffic was not allowed to actually happen
-    elif http_request_scheme == HTTPS and https_request_scheme == HTTPS:
-        dlog(f"\tBOTH HTTPS AND HTTPS ")
-        return HTTPS_ONLY,status_code
-
-    elif http_request_scheme == HTTPS and https_request_scheme is None:
-        # was getting some requests where the HTTP request
-        # would be redirected, but the http request would be inaccessible
-        # i am choosing to treat sites like this as inaccessible, 
-        # buecause neither HTTP nor HTTPS properly gets any contentA
-        return NEITHER_HTTP_NOR_HTTPS,None
     else:
-        dlog(f"\t NONE??????????????\n")
         return None,None
 
 def test_handful():
@@ -190,7 +174,6 @@ def try_csv(csv_path="topsite_small.csv"):
     df.to_csv(output_path)
 
 if __name__ == "__main__":
-    try_csv("topsite_small.csv")
-    # try_csv(TOPSITES)
-    # try_csv(OTHERSITES)
+    try_csv(TOPSITES)
+    try_csv(OTHERSITES)
 
