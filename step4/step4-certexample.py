@@ -2,6 +2,7 @@ from  datetime import datetime
 import ssl
 import socket
 import OpenSSL
+import pandas as pd
 
 website = 'google.com'
 ctx = ssl.create_default_context()
@@ -32,11 +33,44 @@ cert fields I care about:
 """
 """
 map dictionary of:
-    oganization name to count
+    oganization name to count certificates issued
+    and produce alphbetical list
+        certificate amount and frequency per CA
 
     difference in times
+        min
+        max
+        also patterns
+        want to associate time difference and CA
 
+    cryprtographic algorithms (pubkey type)
+        frequency
+
+    key lengths
+        frequencty
+
+    public key RSA exponent
+        associate with CA
+
+
+
+    rows with:
+        immediate CA, time diff, crypto algo, key length, optional exponent, signature algorithm
 """
+
+def prepare_dataframe(cert_info_list_list):
+
+    column_names = [
+            'organization name',
+            'validity duration',
+            'crypto algo',
+            'key length',
+            'RSA exponent',
+            'signature algo',
+            ]
+    df = pd.DataFrame(cert_info_list_list,columns=column_names)
+    return df
+
 
 # https://www.pyopenssl.org/en/latest/api/crypto.html
 
@@ -47,6 +81,7 @@ org_name = x509.get_issuer().organizationName
 # Watch out, these can return None.
 start_time = x509.get_notBefore()
 end_time = x509.get_notAfter()
+time_difference_in_seconds_float = find_second_difference_for_asn_times(start_time, end_time)
 
 sign_alg = x509.get_signature_algorithm()
 
@@ -107,8 +142,6 @@ def find_second_difference_for_asn_times(asn_time_1: bytes, asn_time_2: bytes) -
     second_difference = abs(second_difference)
 
     return second_difference
-
-
 
 if __name__ == "__main__":
     asn1 = b"20240131103045Z"
