@@ -186,7 +186,7 @@ def get_row_for_website(website='google.com'):
         sign_alg
         ]
 
-    print(row)
+    print(f"{website} : {row}")
     return row
     
     """
@@ -259,6 +259,7 @@ def test_time_difference():
 
 if __name__ == "__main__":
     try_csv(TOPSITES)
+    print("\n\n\n\n\n\nOTHER SITES BELOW\n\n\n\n\n")
     try_csv(OTHERSITES)
 
 
