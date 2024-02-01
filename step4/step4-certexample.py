@@ -27,7 +27,7 @@ def turn_ASN1_time_to_datetime(asn_time: bytes):
 
     # string should be 16 bytes
     
-    print(len(asn_time))
+    # print(len(asn_time))
     assert len(asn_time) == 15
 
     # use datetime's cool ass
@@ -50,16 +50,20 @@ def find_second_difference_for_asn_times(asn_time_1: bytes, asn_time_2: bytes) -
 
     return second_difference
 
-def try_one_website(website='google.com'):
+def get_row_for_website(website='google.com'):
 
-    ctx = ssl.create_default_context()
-    connection = socket.create_connection((website, 443))
-    s = ctx.wrap_socket(connection, server_hostname=website)
-    cert = s.getpeercert(True)
-    s.close()
-    cert = ssl.DER_cert_to_PEM_cert(cert)
-    x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert) 
-    print(x509)
+    try:
+        ctx = ssl.create_default_context()
+        connection = socket.create_connection((website, 443))
+        s = ctx.wrap_socket(connection, server_hostname=website)
+        cert = s.getpeercert(True)
+        s.close()
+        cert = ssl.DER_cert_to_PEM_cert(cert)
+        x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert) 
+    except Exception as e:
+        print(f"got error: {website} : {e}")
+        return []
+
 
     """
     cert fields I care about:
@@ -139,20 +143,23 @@ def try_one_website(website='google.com'):
 
     pub_key_exp = None
     if pub_key_type == OpenSSL.crypto.TYPE_RSA:
-        pub_key_exp = pub_key.to_cryptography_key().public_numbers().exponent()
+        pub_key_exp = pub_key.to_cryptography_key().public_numbers().e
 
 
 
+    # structure for a single row in the eventually resultant dataframe
+    # I will then later make a dataframe to get statistics from
     row = [
-    org_name,
-    time_difference_in_seconds_float,
-    crypto_algorithm,
-    pub_key_len,
-    pub_key_exp,
-    sign_alg
-    ]
+        org_name,
+        time_difference_in_seconds_float,
+        crypto_algorithm,
+        pub_key_len,
+        pub_key_exp,
+        sign_alg
+        ]
 
     print(row)
+    return row
     
     """
     print(
@@ -169,6 +176,39 @@ def try_one_website(website='google.com'):
 
 
 
+def try_domain_from_pandas_row(row):
+    domain = row['domain']
+    row = get_row_for_website(domain)
+    return row
+
+def try_csv(csv_path="topsite_small.csv"):
+    df = pd.read_csv(csv_path, names=['ranking','domain'])
+    ROW = 1
+    application = df.apply(try_domain_from_pandas_row, axis=ROW)
+    print(application)
+    return
+
+    # https://stackoverflow.com/questions/29550414/how-can-i-split-a-column-of-tuples-in-a-pandas-dataframe
+    df[['HTTP availability','status code']] = pd.DataFrame(application.tolist(), index=df.index)
+
+    # actually save the output to avoid misery of a useless long run
+
+    # default path for testing input
+    output_path = csv_path + "OUTPUT.csv"
+
+    # requested output CSV names from assignment
+    if csv_path == TOPSITES:
+        output_path = "step3-topsites-requests.csv"
+    elif csv_path == OTHERSITES:
+        output_path = "step3-othersites-requests.csv"
+
+    if output_path == csv_path:
+        output_path += "_1.csv"
+
+    print(df)
+    df.to_csv(output_path)
+
+
 def test_time_difference():
     asn1 = b"20240131103045Z"
     asn1 = b"20240201080808Z"
@@ -180,6 +220,6 @@ def test_time_difference():
     print(diff)
 
 if __name__ == "__main__":
-    try_one_website()
+    try_csv()
 
 

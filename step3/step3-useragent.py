@@ -122,7 +122,6 @@ def return_quadrant_for_domain(domain) -> Tuple[str | None, int | None]:
     HTTPS='https'
     HTTP='http'
 
-    # don't cre about https response code
     https_request_scheme,https_status_code = try_url_and_get_scheme(domain,https=True)
 
     # this should never happen!
