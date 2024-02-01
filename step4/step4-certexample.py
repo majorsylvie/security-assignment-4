@@ -143,30 +143,29 @@ def try_one_website(website='google.com'):
 
 
 
-    """
     row = [
     org_name,
-    time_differences_in_seconds_float,
-    pub_key_type
+    time_difference_in_seconds_float,
+    crypto_algorithm,
     pub_key_len,
+    pub_key_exp,
+    sign_alg
+    ]
 
-
-    immediate CA,
-    time diff,
-    crypto algo,
-    key length,
-    optional exponent,
-    signature algorithm
+    print(row)
+    
     """
     print(
             f"org_name = {org_name} : {type(org_name)}\n"
             f"start_time = {start_time} : {type(start_time)}\n"
             f"end_time = {end_time} : {type(end_time)}\n"
+            f"crypto_alg ] {crypto_algorithm} : {type(crypto_algorithm)}\n"
             f"signature_alg ] {sign_alg} : {type(sign_alg)}\n"
             f"pub_key_type = {pub_key_type} : {type(pub_key_type)}\n"
             f"pub_key_len = {pub_key_len} : {type(pub_key_len)}\n"
             f"pub_key_exp = {pub_key_exp} : {type(pub_key_exp)}\n"
     )
+    """
 
 
 
