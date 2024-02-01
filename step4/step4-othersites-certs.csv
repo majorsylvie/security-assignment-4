@@ -1,0 +1,1001 @@
+,ranking,domain,org_name,time_difference_in_seconds_float,crypto_algorithm,pub_key_len,pub_key_exp,sign_alg
+0,ranking,domain,,,,,,
+1,2000,loopme.me,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+2,3000,spotim.market,ZeroSSL,7862399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+3,4000,hbs.edu,,,,,,
+4,5000,bhg.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+5,6000,worldstarhiphop.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+6,7000,huedatastore.com,,,,,,
+7,8000,tokyo-sports.co.jp,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+8,9000,988lifeline.org,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+9,10000,kolkataff.fun,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+10,11000,logitechg.com,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+11,12000,udemycdn.com,,,,,,
+12,13000,doh.pub,"TrustAsia Technologies, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+13,14000,dnse0.com,,,,,,
+14,15000,darkreading.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+15,16000,wadax-sv.jp,,,,,,
+16,17000,merckmanuals.com,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+17,18000,harpers.org,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+18,19000,4gamer.net,Nijimo K.K.,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+19,20000,mangatown.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+20,21000,guardingvisionru.com,,,,,,
+21,22000,videos-zoofilia.com,"Cloudflare, Inc.",30067199.0,,256.0,,b'ecdsa-with-SHA256'
+22,23000,keonhacai5.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+23,24000,tobii.com,"DigiCert, Inc.",15811199.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+24,25000,routeviews.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+25,26000,wbez.org,Amazon,34041599.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+26,27000,engie.fr,DigiCert Inc,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+27,28000,acertb.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+28,29000,trinet.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+29,30000,incometaxgujarat.org,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+30,31000,monetizer101.com,,,,,,
+31,32000,ast-innovation.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+32,33000,fair.org,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+33,34000,enjin.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+34,35000,mttnow.com,,,,,,
+35,36000,usm.my,,,,,,
+36,37000,tds.bid,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+37,38000,cradlepoint.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+38,39000,marketbusinessnews.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+39,40000,cloudplatform.fi,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+40,41000,plat.fi,,,,,,
+41,42000,sfist.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+42,43000,crossword-solver.io,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+43,44000,vfghe.com,,,,,,
+44,45000,chub.ai,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+45,46000,superteacherworksheets.com,DigiCert Inc,30931199.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+46,47000,seaofthieves.com,Microsoft Corporation,27269803.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+47,48000,heownouncillor.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+48,49000,mappls.com,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+49,50000,localsyr.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+50,51000,cybcode.net,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+51,52000,mobil.com,DigiCert Inc,23414399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+52,53000,aroma-zone.com,DigiCert Inc,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+53,54000,dailynayadiganta.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+54,55000,amplimed.com.br,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+55,56000,theyworkforyou.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+56,57000,ssi.com.vn,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+57,58000,wwewlxdako.net,,,,,,
+58,59000,paddypower.it,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+59,60000,clubessential.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+60,61000,buhl.de,DigiCert Inc,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+61,62000,dattoweb.com,,,,,,
+62,63000,fiskerinc.com,"GoDaddy.com, Inc.",31613194.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+63,64000,pawrade.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+64,65000,fuckhardclips.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+65,66000,flowsense.net,,,,,,
+66,67000,johnshopkins.edu,,,,,,
+67,68000,cibeg.com,,,,,,
+68,69000,rapgenius.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+69,70000,pg21.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+70,71000,awsdns-cn-38.com,,,,,,
+71,72000,okusurinavi.shop,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+72,73000,nyugat.hu,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+73,74000,moya-semya.ru,,,,,,
+74,75000,ilimnet.ru,GlobalSign nv-sa,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+75,76000,academie-francaise.fr,"DigiCert, Inc.",33955199.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+76,77000,mandy.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+77,78000,beetux.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+78,79000,laredoute.it,Google Trust Services LLC,7779532.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+79,80000,mobileverso.com.br,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+80,81000,moneta.cz,DigiCert Inc,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+81,82000,bitrix24site.ru,"GoDaddy.com, Inc.",34300800.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+82,83000,xnxx123.net,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+83,84000,cyberresilience.io,Google Trust Services LLC,7779295.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+84,85000,neko-hentai.net,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+85,86000,misterrunning.com,Sectigo Limited,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+86,87000,indianxxxbf.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+87,88000,podari-zhizn.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+88,89000,spectr-sb116.ru,,,,,,
+89,90000,only-znakomstva.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+90,91000,gamewatcher.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+91,92000,gerberchildrenswear.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+92,93000,ipasgo.go.gov.br,,,,,,
+93,94000,uberlandia.mg.gov.br,,,,,,
+94,95000,delhihighcourt.nic.in,,,,,,
+95,96000,scaledagile.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+96,97000,theacademicpapers.co.uk,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+97,98000,charmfling.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+98,99000,pskw.com,,,,,,
+99,100000,bluesip.net,,,,,,
+100,101000,qubic.li,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+101,102000,iress.co.uk,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+102,103000,corp.life,,,,,,
+103,104000,omp.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+104,105000,kitakyushu.lg.jp,,,,,,
+105,106000,gnpge.com,,,,,,
+106,107000,onerpm.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+107,108000,hagel-shop.de,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+108,109000,hp-mns.com,DigiCert Inc,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+109,110000,turismoroma.it,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+110,111000,eoi.es,GEANT Vereniging,31622399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+111,112000,oh100.com,Let's Encrypt,7775999.0,,3072.0,65537.0,b'sha256WithRSAEncryption'
+112,113000,searchy.biz,,,,,,
+113,114000,dzrt.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+114,115000,loose-gene.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+115,116000,optasports.com,,,,,,
+116,117000,hookupguru.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+117,118000,cccd.edu,,,,,,
+118,119000,ridicdn.net,,,,,,
+119,120000,pibig.info,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+120,121000,xvidiu.pro,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+121,122000,saga.lg.jp,,,,,,
+122,123000,rastrnet.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+123,124000,wikijm.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+124,125000,rmu.edu,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+125,126000,budgetyourtrip.com,DigiCert Inc,32745599.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+126,127000,duoprime.xyz,,,,,,
+127,128000,thecloudwebsiteserver.com,,,,,,
+128,129000,staffordshire.gov.uk,GEANT Vereniging,31622399.0,,4096.0,65537.0,b'sha384WithRSAEncryption'
+129,130000,blossoms.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+130,131000,onlinetopchoice.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+131,132000,korrelate.net,,,,,,
+132,133000,snblymm.com,,,,,,
+133,134000,3sktr.vip,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+134,135000,pandi.or.id,,,,,,
+135,136000,lottovip2023.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+136,137000,uwtsd.ac.uk,GEANT Vereniging,31622399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+137,138000,ligatotomega.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+138,139000,improd.top,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+139,140000,monster-it.net,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+140,141000,sunriseseniorliving.com,"GoDaddy.com, Inc.",29793775.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+141,142000,gruv.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+142,143000,basicincome.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+143,144000,miinps.com,,,,,,
+144,145000,idc.ac.il,DigiCert Inc,31190399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+145,146000,fishpond.com.au,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+146,147000,gflex.nl,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+147,148000,cancercouncil.com.au,"Cloudflare, Inc.",31535999.0,,256.0,,b'ecdsa-with-SHA256'
+148,149000,mazucdn.com,,,,,,
+149,150000,r34porn.net,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+150,151000,elevationchurch.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+151,152000,dermaniaplus.com,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+152,153000,nea.org.np,Sectigo Limited,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+153,154000,nimiq.agency,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+154,155000,e-kamone.com,,,,,,
+155,156000,jetfilm.cam,,,,,,
+156,157000,telekom-mms.com,Sectigo Limited,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+157,158000,ishigaki.co.jp,DigiCert Inc,32572799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+158,159000,moola.market,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+159,160000,akson.ru,GlobalSign nv-sa,30568277.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+160,161000,stats-tracker.net,Amazon,34041599.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+161,162000,ylmmuy.com,,,,,,
+162,163000,pierreherme.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+163,164000,mostbethu.net,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+164,165000,spears.top,,,,,,
+165,166000,frenet.com.br,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+166,167000,hindiyoupornx.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+167,168000,wiz.money,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+168,169000,motivtelecom.ru,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+169,170000,goodao.net,"TrustAsia Technologies, Inc.",34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+170,171000,redeunna.com.br,"GoDaddy.com, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+171,172000,climatepolicyinitiative.org,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+172,173000,loket.nl,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+173,174000,add123.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+174,175000,caci.dz,Let's Encrypt,7775999.0,,3072.0,65537.0,b'sha256WithRSAEncryption'
+175,176000,airdesign.in,,,,,,
+176,177000,innodata-isogen.com,,,,,,
+177,178000,deeprootedstranded.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+178,179000,xn--m7r726cwtj.cn,,,,,,
+179,180000,thefancy.com,,,,,,
+180,181000,egitana.pt,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+181,182000,fauna-flora.org,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+182,183000,indahonline.com,Sectigo Limited,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+183,184000,poconomountains.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+184,185000,publinet.it,,,,,,
+185,186000,socaseiras.com.br,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+186,187000,razyboard.com,,,,,,
+187,188000,kenhvn2.com,,,,,,
+188,189000,unboxdiaries.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+189,190000,arto-usolie.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+190,191000,nodestake.top,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+191,192000,darklite.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+192,193000,nicesrv.de,,,,,,
+193,194000,verben10.com,,,,,,
+194,195000,hope.ac.uk,,,,,,
+195,196000,jade-hs.de,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+196,197000,gountung88d.xyz,,,,,,
+197,198000,govzw.com,DigiCert Inc,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+198,199000,picsrv.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+199,200000,dianxiatrads.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+200,201000,wigmore-hall.org.uk,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+201,202000,sunstar.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+202,203000,simplelogin.io,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+203,204000,din-server.dk,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+204,205000,rtbuzz.net,,,,,,
+205,206000,align.com,,,,,,
+206,207000,koizumi-onlineshop.jp,GlobalSign nv-sa,3211721.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+207,208000,fut.uz,,,,,,
+208,209000,lnfcu.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+209,210000,nbb-cdn.de,,,,,,
+210,211000,klassekampen.no,Google Trust Services LLC,7779234.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+211,212000,catalogos365.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+212,213000,usabilityhub.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+213,214000,betclic.bj,Corporation Service Company,31622399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+214,215000,mammyup.com,,,,,,
+215,216000,w2bet.net,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+216,217000,farestart.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+217,218000,tol.it,,,,,,
+218,219000,cxalloy.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+219,220000,netpluz.sg,,,,,,
+220,221000,atp.fm,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+221,222000,mappr.co,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+222,223000,hear-it.org,ZeroSSL,7862399.0,,256.0,,b'ecdsa-with-SHA384'
+223,224000,nikkei.jp,,,,,,
+224,225000,china-zrg.com,,,,,,
+225,226000,mountainsteals.com,,,,,,
+226,227000,faxvin.com,DigiCert Inc,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+227,228000,luarmor.net,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+228,229000,herbalessencesla.com,"Entrust, Inc.",34128000.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+229,230000,spi.uz,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+230,231000,growfinancial.org,"Entrust, Inc.",32054399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+231,232000,coinomi.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+232,233000,ccv.church,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+233,234000,retailtrends.nl,Amazon,34041599.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+234,235000,refurbed.com,Google Trust Services LLC,7779274.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+235,236000,verycdn.net,,,,,,
+236,237000,etraveligroup.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+237,238000,zenra.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+238,239000,111tt.icu,,,,,,
+239,240000,johnnie-o.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+240,241000,jjbearings.cn,,,,,,
+241,242000,discoverlancaster.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+242,243000,laurenceking.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+243,244000,dorsten.de,Sectigo Limited,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+244,245000,2040-parts.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+245,246000,rpfm.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+246,247000,gloriafood.com,DigiCert Inc,31708799.0,,256.0,,b'sha256WithRSAEncryption'
+247,248000,painfulpleasures.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+248,249000,asdatyres.co.uk,GlobalSign nv-sa,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+249,250000,nbr.gov.bh,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+250,251000,topworking.vn,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+251,252000,csolve.net,,,,,,
+252,253000,kindroid.ai,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+253,254000,abclegal.com,,,,,,
+254,255000,simul-china.com,,,,,,
+255,256000,karoo.com.br,Sectigo Limited,32399999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+256,257000,morden01.com,,,,,,
+257,258000,mobiili.fi,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+258,259000,zooanimalsexporn.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+259,260000,sunworksnepal.com.np,,,,,,
+260,261000,ionline.com.au,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+261,262000,clickthis.blog,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+262,263000,9hf.com,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+263,264000,hcmed.org,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+264,265000,englishonlinehelp.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+265,266000,daltan.hu,,,,,,
+266,267000,webhaus.com.br,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+267,268000,fit4brain.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+268,269000,penneo.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+269,270000,rupt.dev,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+270,271000,jalizer.com,,,,,,
+271,272000,ivbt.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+272,273000,animesubvn.tv,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+273,274000,cctalk.com,"TrustAsia Technologies, Inc.",33436799.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+274,275000,96nmdqufhz.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+275,276000,streameast2.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+276,277000,forceofnatureclean.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+277,278000,rb.net,,,,,,
+278,279000,gry-planszowe.pl,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+279,280000,writingclasses.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+280,281000,shahrebours.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+281,282000,e-explorer.jp,GlobalSign nv-sa,3231600.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+282,283000,web-wings.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+283,284000,upfoot.in,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+284,285000,valorantpornhentai.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+285,286000,leakedbb.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+286,287000,linkeservices.com,,,,,,
+287,288000,rewardcloud.net,,,,,,
+288,289000,mcdonalds.com.ar,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+289,290000,littlecigogne.com,Google Trust Services LLC,7779072.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+290,291000,adad.ir,,,,,,
+291,292000,dnstech.ru,,,,,,
+292,293000,inovacaotecnologica.com.br,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+293,294000,101espn.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+294,295000,b242ya.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+295,296000,wichitafallstx.gov,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+296,297000,rhbtradesmart.com,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+297,298000,u16866.com,,,,,,
+298,299000,gnanagharjane.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+299,300000,writingforums.org,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+300,301000,paris-arc-de-triomphe.fr,,,,,,
+301,302000,atwonline.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+302,303000,january.com,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+303,304000,itovn.com.vn,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+304,305000,ctoy.com.cn,"DigiCert, Inc.",33263999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+305,306000,cotdns.net,,,,,,
+306,307000,drbrownsbaby.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+307,308000,tlfapparel.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+308,309000,justdating.net,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+309,310000,memozor.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+310,311000,minzdrav.uz,,,,,,
+311,312000,nova1.net,Let's Encrypt,7775999.0,,3072.0,65537.0,b'sha256WithRSAEncryption'
+312,313000,cravingtasty.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+313,314000,apk-download.co,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+314,315000,trinaturk.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+315,316000,mostbetoyna.ru,,,,,,
+316,317000,slotozal-official.xyz,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+317,318000,totowuhan.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+318,319000,sojourncreed.life,,,,,,
+319,320000,backabuddy.co.za,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+320,321000,ggcdncc65.shop,,,,,,
+321,322000,osijek031.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+322,323000,truththeory.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+323,324000,casino-joy.click,"Cloudflare, Inc.",31535999.0,,256.0,,b'ecdsa-with-SHA256'
+324,325000,biodat.ru,,,,,,
+325,326000,crealitycloud.cn,,,,,,
+326,327000,jkcottonclub.com,,,,,,
+327,328000,ester.ee,,,,,,
+328,329000,ahanonline.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+329,330000,aksinet.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+330,331000,gamingdns.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+331,332000,agencedpc.fr,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+332,333000,vulkan-prestige.link,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+333,334000,livingston.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+334,335000,metapolar.hu,,,,,,
+335,336000,belties.shop,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+336,337000,defamer.com,,,,,,
+337,338000,learningcloud.me,DigiCert Inc,32918399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+338,339000,sabon.ro,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+339,340000,tennwireless.com,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+340,341000,king-vulcan.biz,"Cloudflare, Inc.",31535999.0,,256.0,,b'ecdsa-with-SHA256'
+341,342000,ejercito.mil.co,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+342,343000,abstractwebhost.com,,,,,,
+343,344000,festive-lights.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+344,345000,myschoolsask.ca,"GoDaddy.com, Inc.",34300800.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+345,346000,stealthgpt.ai,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+346,347000,aware3.net,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+347,348000,astons.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+348,349000,houseofstaunton.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+349,350000,bilgibizden10.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+350,351000,dev4dev.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+351,352000,tnk12.gov,,,,,,
+352,353000,royalsundaram.in,DigiCert Inc,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+353,354000,avivare.com,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+354,355000,etsyhunt.com,"TrustAsia Technologies, Inc.",32054399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+355,356000,thereisadayforthat.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+356,357000,crapuleparis.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+357,358000,gigapower.com,"DigiCert, Inc.",15551999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+358,359000,hostedns.com.au,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+359,360000,orsrika.co.il,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+360,361000,trainercentralsite.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+361,362000,kcg.ac.jp,"SECOM Trust Systems CO.,LTD.",33725261.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+362,363000,hotelclub.com,,,,,,
+363,364000,soundtrapedusummit.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+364,365000,salezap.ru,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+365,366000,nisshin.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+366,367000,tiws.com.ar,,,,,,
+367,368000,indiabiodiversity.org,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+368,369000,diarioinforme.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+369,370000,stop-ttip.org,,,,,,
+370,371000,cruisesheet.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+371,372000,mccno.com,DigiCert Inc,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+372,373000,antifilter.download,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+373,374000,hoa44trk.com,"Starfield Technologies, Inc.",30168177.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+374,375000,secure-by-design.com,,,,,,
+375,376000,easeus.fr,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+376,377000,viax.io,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+377,378000,dakotanames.com,,,,,,
+378,379000,lumberliquidators.com,"Cloudflare, Inc.",31535999.0,,256.0,,b'ecdsa-with-SHA256'
+379,380000,usenet-fr.net,,,,,,
+380,381000,aviator-mostbet-casino.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+381,382000,fuku-e.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+382,383000,lgecloudapm.com,,,,,,
+383,384000,olimp1g7w.xyz,,,,,,
+384,385000,colombiawebs.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+385,386000,fts-foxnews.com,,,,,,
+386,387000,hot-cartoon.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+387,388000,booksc.eu,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+388,389000,jbl.no,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+389,390000,sochifeya2.mobi,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+390,391000,fcdnipro.ua,,,,,,
+391,392000,fclorient.bzh,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+392,393000,natlot.be,,,,,,
+393,394000,bulletpointmountingsolutions.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+394,395000,glera.net,,,,,,
+395,396000,asian-bondage.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+396,397000,icdsoft.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+397,398000,hazi.ro,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+398,399000,ube-yanagiya.co.jp,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+399,400000,cbscorporation.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+400,401000,biogossip.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+401,402000,datacenter-insider.de,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+402,403000,uiverse.io,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+403,404000,voxivo.com,"Starfield Technologies, Inc.",34300800.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+404,405000,capital.com.ph,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+405,406000,jetgram.io,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+406,407000,themdc.org,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+407,408000,abude.ru,,,,,,
+408,409000,viva64.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+409,410000,orca-88.space,,,,,,
+410,411000,gtcocalcomp.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+411,412000,marvellover.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+412,413000,ktokyda.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+413,414000,over-lap.co.jp,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+414,415000,assignmentpro.com,,,,,,
+415,416000,moneycazino.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+416,417000,chinacars.com,,,,,,
+417,418000,webnice.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+418,419000,sopula.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+419,420000,mybusinesswebsite.com,,,,,,
+420,421000,deadstate.org,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+421,422000,onlinedisclosures.co.uk,,,,,,
+422,423000,rds.net.pk,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+423,424000,couponsherpa.com,,,,,,
+424,425000,viatepigan.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+425,426000,duhoctrungquoc.vn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+426,427000,josh.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+427,428000,inet-center.ru,,,,,,
+428,429000,noldus.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+429,430000,planonsoftware.com,Sectigo Limited,34041599.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+430,431000,vromansbookstore.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+431,432000,pushbulletusercontent.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+432,433000,scoutapp.ai,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+433,434000,preaching.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+434,435000,cy2hand.com,,,,,,
+435,436000,mp3fitz.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+436,437000,ozcountrymile.com,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+437,438000,dotemu.com,,,,,,
+438,439000,peach.ne.jp,,,,,,
+439,440000,damaislot.org,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+440,441000,stateintestacylaws.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+441,442000,hypotheekshop.nl,Sectigo Limited,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+442,443000,bcps.k12.md.us,,,,,,
+443,444000,housekeep.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+444,445000,db-reisewunschzettel.de,,,,,,
+445,446000,internetwines.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+446,447000,thedarkknightrises.com,,,,,,
+447,448000,best-serial.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+448,449000,puv.fi,,,,,,
+449,450000,todelete.com,,,,,,
+450,451000,skincarebyalana.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+451,452000,reconditeprison.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+452,453000,atb7pokerdom.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+453,454000,hurma.work,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+454,455000,cybernetbc.ca,,,,,,
+455,456000,streamready.in,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+456,457000,pica-resort.jp,DigiCert Inc,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+457,458000,cardaccesproquick.sbs,,,,,,
+458,459000,isetl.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+459,460000,perryproperty.co.nz,,,,,,
+460,461000,brokestraightboys.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+461,462000,okrwmi.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+462,463000,pokerdom7p.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+463,464000,akita-bank.co.jp,DigiCert Inc,31708799.0,,256.0,,b'sha256WithRSAEncryption'
+464,465000,onlynut.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+465,466000,mottohub.com,,,,,,
+466,467000,eldocasinoz.xyz,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+467,468000,miint.net,,,,,,
+468,469000,tengtoolsusa.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+469,470000,holzland.de,DigiCert Inc,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+470,471000,alcomag.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+471,472000,internetmandns.com,,,,,,
+472,473000,tcenet.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+473,474000,caixaconsorcio.com.br,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+474,475000,hnt.com.br,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+475,476000,nwxs19.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+476,477000,th-rms.co.uk,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+477,478000,naigai-gr.co.jp,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+478,479000,zhealthehr.com,Sectigo Limited,32313599.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+479,480000,refpabxdce.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+480,481000,wnt.com.br,,,,,,
+481,482000,onlinecasinohex.ca,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+482,483000,myotcstore.com,"DigiCert, Inc.",31622399.0,,2048.0,65537.0,b'ecdsa-with-SHA384'
+483,484000,critmc.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+484,485000,itotdel.info,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+485,486000,miarens.ir,,,,,,
+486,487000,eldoradocasino-ljn.top,,,,,,
+487,488000,ecobux.store,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+488,489000,brm.io,Google Trust Services LLC,7778709.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+489,490000,webarena.com.au,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+490,491000,volkswagen.cz,,,,,,
+491,492000,adobeposa.com,,,,,,
+492,493000,gme.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+493,494000,gu84b.top,,,,,,
+494,495000,qoshe.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+495,496000,flypass.com.co,,,,,,
+496,497000,vulcano-official-slots.com,,,,,,
+497,498000,jetcassiono-russia1.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+498,499000,delboniauriemo.com.br,,,,,,
+499,500000,muzhiwan.com,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+500,501000,jet-cazino6.win,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+501,502000,webadepthost.co.uk,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+502,503000,refpaxmzuq.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+503,504000,biz.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+504,505000,rajantwanabashu.com.np,,,,,,
+505,506000,watchseries8.to,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+506,507000,wgauradio.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+507,508000,kvif-fresh-casino.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+508,509000,magar.cl,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+509,510000,admiralx-ksq.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+510,511000,admiralx-psp.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+511,512000,faceprep.in,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+512,513000,emedixus.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+513,514000,trcot.net,,,,,,
+514,515000,deals75.com,ZeroSSL,7862399.0,,4096.0,65537.0,b'sha384WithRSAEncryption'
+515,516000,funkelfaden.de,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+516,517000,foyer.lu,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+517,518000,fizabet.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+518,519000,cotedazur.jp,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+519,520000,greenwich9.ru,,,,,,
+520,521000,kukudm.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+521,522000,hendrickhealth.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+522,523000,intergeo.de,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+523,524000,icap.com,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+524,525000,sgr.nl,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+525,526000,aeddinc.org,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+526,527000,spreeradio.de,,,,,,
+527,528000,rola.vip,,,,,,
+528,529000,fnafgo.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+529,530000,straightpress.jp,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+530,531000,kokote.fr,,,,,,
+531,532000,freshcasino-rezak.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+532,533000,eldoradocasino-ast.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+533,534000,piccin.jp,GlobalSign nv-sa,3066975.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+534,535000,tucanos.com,Sectigo Limited,32659199.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+535,536000,brentfordtw8.com,,,,,,
+536,537000,khongcogidau.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+537,538000,einvoice.vn,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+538,539000,dohler.com.br,,,,,,
+539,540000,admeca.kr,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+540,541000,colgatepalmolive.it,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+541,542000,geometroit.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+542,543000,link-tap.com,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+543,544000,paranix.eu,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+544,545000,srv-it.de,,,,,,
+545,546000,wxw.media,,,,,,
+546,547000,tena.com.br,,,,,,
+547,548000,desertcart.co.uk,"Cloudflare, Inc.",29375999.0,,256.0,,b'ecdsa-with-SHA256'
+548,549000,gtarp.ru,GlobalSign nv-sa,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+549,550000,bescom.co.in,DigiCert Inc,14947199.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+550,551000,m37auction.com,,,,,,
+551,552000,tunbridgewells.gov.uk,,,,,,
+552,553000,advantech.com.cn,"DigiCert, Inc.",15897599.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+553,554000,laoistoday.ie,"Starfield Technologies, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+554,555000,multipledns.com,,,,,,
+555,556000,lustflesh.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+556,557000,jiareba.com,,,,,,
+557,558000,wildclient.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+558,559000,mailtwo.com,,,,,,
+559,560000,luckycola.bet,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+560,561000,admiralx-rjff.buzz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+561,562000,soliditet.se,Corporation Service Company,32831999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+562,563000,jxgydj.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+563,564000,sanmishahost.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+564,565000,adveo.com,Corporation Service Company,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+565,566000,laihoana.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+566,567000,wholesale-electrical-supply.com,,,,,,
+567,568000,hcqp9999.com,,,,,,
+568,569000,gzmiaoying.com,,,,,,
+569,570000,shorelinewa.gov,Let's Encrypt,7775999.0,,3072.0,65537.0,b'sha256WithRSAEncryption'
+570,571000,crystalradio.cn,,,,,,
+571,572000,gotestprep.com,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+572,573000,vulkanplatinum-sloty.click,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+573,574000,24jam.buzz,,,,,,
+574,575000,nungkai.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+575,576000,tameteo.nl,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+576,577000,voteriders.org,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+577,578000,icoi.org,"Starfield Technologies, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+578,579000,iikaeru.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+579,580000,frank-casinoo.club,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+580,581000,saowz.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+581,582000,maxbets-sports-betting.club,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+582,583000,hipatiapress.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+583,584000,goulile.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+584,585000,kirche-bremen.de,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+585,586000,vnxoso.gg,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+586,587000,yidaxinyuan.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+587,588000,bgbls.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+588,589000,bulgartel.bg,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+589,590000,policeauctionscanada.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+590,591000,elga.gr,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+591,592000,melbet-app.site,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+592,593000,meixiang720.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+593,594000,rangecast.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+594,595000,centurionim.com,"GoDaddy.com, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+595,596000,vavada-zerkalo8.buzz,DigiCert Inc,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+596,597000,130slottica.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+597,598000,melbet67217.com,,,,,,
+598,599000,sctkxjc.com,,,,,,
+599,600000,yagihashi.co.jp,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+600,601000,color.io,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+601,602000,hamafarin.ir,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+602,603000,modelosimples.com.br,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+603,604000,safahome.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+604,605000,xemphim.app,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+605,606000,s5y.io,,,,,,
+606,607000,navarracapital.es,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+607,608000,clubs-leo.xyz,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+608,609000,irsss.ca,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+609,610000,stavklad.ru,,,,,,
+610,611000,cdhich.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+611,612000,vendetuarma.com,"GoDaddy.com, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+612,613000,xn----btbtmnjn.xn--p1ai,,,,,,
+613,614000,azino777-d2i2x.icu,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+614,615000,233joycasino.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+615,616000,loaney.es,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+616,617000,77-azinomobile.ru,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+617,618000,deginvest.de,Deutsche Telekom Security GmbH,32031127.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+618,619000,seikun.co.jp,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+619,620000,newacademic.net,,,,,,
+620,621000,cardinalcorp.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+621,622000,zhixiangtongtao.com,,,,,,
+622,623000,aimst.edu.my,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+623,624000,alphega-farmacie.ro,Sectigo Limited,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+624,625000,zsjjrhy.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+625,626000,gold-miners.site,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+626,627000,vulcan-mobile.club,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+627,628000,50reefs.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+628,629000,penggeshuofang.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+629,630000,ayybyyy.com,,,,,,
+630,631000,thuuz.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+631,632000,stoodnt.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+632,633000,hnsywlkj.com,,,,,,
+633,634000,b1g.one,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+634,635000,theunionleader.com,,,,,,
+635,636000,emma-sleep.com.ph,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+636,637000,easytechhome.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+637,638000,thepornbuzz.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+638,639000,zhilingcy.com,,,,,,
+639,640000,bathabbey.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+640,641000,bornete.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+641,642000,nhathuocviet.vn,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+642,643000,orologidiclasse.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+643,644000,wunderkopf.de,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+644,645000,fonbet-a78c3.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+645,646000,goleapfrog.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+646,647000,riobet-141.ru,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+647,648000,limak.az,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+648,649000,insidethevatican.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+649,650000,kramp.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+650,651000,teror.es,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+651,652000,pokerdomked.top,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+652,653000,knifeinformer.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+653,654000,silkair.com,,,,,,
+654,655000,efusionworld.net,DigiCert Inc,32918399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+655,656000,yshghs.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+656,657000,aquarium.bg,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+657,658000,thekitchenemporiumanderson.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+658,659000,pokerdom-ru1.fun,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+659,660000,pointonenav.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+660,661000,mixcar.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+661,662000,attitash.com,DigiCert Inc,31622399.0,,256.0,,b'sha256WithRSAEncryption'
+662,663000,pornokyb.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+663,664000,booicasino-sdp.top,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+664,665000,rocket-inc.net,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+665,666000,salomaozoppi.com.br,DigiCert Inc,32831999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+666,667000,zxtfz.com,,,,,,
+667,668000,nanjingyoulin.com,,,,,,
+668,669000,blackstonepublishing.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+669,670000,shurenyb.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+670,671000,libnauka.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+671,672000,kelas.work,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+672,673000,soccer-history.com,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+673,674000,uzbek-porn.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+674,675000,lordserial.casa,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+675,676000,yammienoob.co,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+676,677000,superplayer-club.com,,,,,,
+677,678000,thomashinder.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+678,679000,reelproductionshd.com,,,,,,
+679,680000,yme.gr,,,,,,
+680,681000,cs-go-go.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+681,682000,jotowo.com,,,,,,
+682,683000,noamazonaseassim.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+683,684000,xtspost.com,,,,,,
+684,685000,sansec.io,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+685,686000,nanjiayanke.com,,,,,,
+686,687000,ty-textiles.com,,,,,,
+687,688000,zincring.com,,,,,,
+688,689000,lucrosa2023.xyz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+689,690000,arcblock.io,Google Trust Services LLC,7779031.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+690,691000,ximxim.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+691,692000,latigi.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+692,693000,twthchina.com,,,,,,
+693,694000,netwatch360.com,DigiCert Inc,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+694,695000,pinupoficialnoecasinotop777.win,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+695,696000,shunxishun.com,,,,,,
+696,697000,azinoslot.tech,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+697,698000,gangshanghuaqipai.com,,,,,,
+698,699000,leonbets-mlv8.site,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+699,700000,bee-ev.de,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+700,701000,atlantamission.org,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+701,702000,southseas.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+702,703000,sol44.casino,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+703,704000,7k-casino-ru.online,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+704,705000,russia-today.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+705,706000,pinup-officialniisite13win.win,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+706,707000,szshanzhe.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+707,708000,rating-casino183-2023.win,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+708,709000,xinronghuagong.com,,,,,,
+709,710000,cristalinedejour.fr,ZeroSSL,7862399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+710,711000,pokerdom-cno5.top,,,,,,
+711,712000,bayernwelle.de,DigiCert Inc,33436799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+712,713000,tns.co,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+713,714000,kingjohnnie.live,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+714,715000,eureka-24-08.top,DigiCert Inc,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+715,716000,deventrade.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+716,717000,friendshiptrivia.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+717,718000,alutech.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+718,719000,duoduojupin.com,,,,,,
+719,720000,pornoskazka9.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+720,721000,ld-333.com,,,,,,
+721,722000,booseries.online,,,,,,
+722,723000,lyydyl.com,,,,,,
+723,724000,ldmk.co.jp,,,,,,
+724,725000,clubsgoldi.xyz,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+725,726000,smclassiccars.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+726,727000,babobotanicals.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+727,728000,roblox.ge,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+728,729000,eldoradocasino-kti.top,,,,,,
+729,730000,capt.org.uk,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+730,731000,seriousfactory.com,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+731,732000,kokshetau.asia,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+732,733000,wunderlabel.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+733,734000,biletwise.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+734,735000,pin-up-casino-sp9.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+735,736000,fangirlish.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+736,737000,maxicom.cz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+737,738000,ice-casino.it,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+738,739000,diveboard.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+739,740000,otora.info,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+740,741000,rollingriver.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+741,742000,brandizzi.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+742,743000,saimoveis.com.br,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+743,744000,mono-iki.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+744,745000,fuukpusi.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+745,746000,wowbabel.com,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+746,747000,bezdepswin.com,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+747,748000,devcgroup.com,,,,,,
+748,749000,terrancle.net,Gandi,34214399.0,,256.0,,b'sha256WithRSAEncryption'
+749,750000,nsunfintech.com,,,,,,
+750,751000,leonbets-mlv10.site,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+751,752000,starkautosales.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+752,753000,region10.org,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+753,754000,borisboroda.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+754,755000,votejohndantzler.com,,,,,,
+755,756000,guitarkit.shop,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+756,757000,e-laziostore.it,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+757,758000,parasol.ua,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+758,759000,chief-floraldesigner.com,,,,,,
+759,760000,asnhosting.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+760,761000,lvdaguangg.com,,,,,,
+761,762000,sdhuesca.es,,,,,,
+762,763000,iatserv.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+763,764000,datspush.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+764,765000,facuminas.com.br,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+765,766000,omf.net.au,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+766,767000,metodist.ru,,,,,,
+767,768000,adidas.in,,,,,,
+768,769000,tsc.k12.in.us,,,,,,
+769,770000,hwhost.in,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+770,771000,uzio.com,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+771,772000,twitscoop.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+772,773000,agentcubed.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+773,774000,ag-co.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+774,775000,clayelectric.com,"Starfield Technologies, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+775,776000,gazzettadisiena.it,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+776,777000,unclaimedfreightfurniture.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+777,778000,cryptotrials.care,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+778,779000,xlmoto.de,"GoDaddy.com, Inc.",2410246.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+779,780000,okuma.kg,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+780,781000,mtsdvorana.rs,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+781,782000,rationalacoustics.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+782,783000,gruppocarige.it,,,,,,
+783,784000,dontmesswithmama.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+784,785000,hnxueba.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+785,786000,clicknetbrasil.com.br,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+786,787000,ceccarbusinessmagazine.ro,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+787,788000,ameliorated.io,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+788,789000,harmankardon.com.br,,,,,,
+789,790000,xxxproud.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+790,791000,seven7.net.br,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+791,792000,excelerondesigns.com,Sectigo Limited,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+792,793000,1666-1646.com,Sectigo Limited,33782399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+793,794000,9ten.live,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+794,795000,agrosiaa.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+795,796000,alnqabialjanubi.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+796,797000,anubis-tierbestattungen.de,"Starfield Technologies, Inc.",34165141.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+797,798000,arwin.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+798,799000,autozoneksa.com,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+799,800000,barodarrb.co.in,,,,,,
+800,801000,betapp007.xyz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+801,802000,biuro.lt,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+802,803000,brandlive.net,Amazon,34214399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+803,804000,cali.org.tw,,,,,,
+804,805000,cccp13.fr,Gandi,11404799.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+805,806000,cic-mobile.fr,,,,,,
+806,807000,codelearn.cat,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+807,808000,cpp.ne.jp,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+808,809000,dandelionmedia-fans.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+809,810000,dezzato.com.br,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+810,811000,dolar.pe,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+811,812000,e-kruk.pl,Unizeto Technologies S.A.,31535999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+812,813000,elcitur.com.tr,"cPanel, Inc.",7862399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+813,814000,erationcard.in,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+814,815000,extremerangeoutfitters.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+815,816000,fibes.gr,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+816,817000,formacioncontinua.mx,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+817,818000,g2gbm.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+818,819000,ghtiket.solutions,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+819,820000,gramfree.net,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+820,821000,handsman.co.jp,DigiCert Inc,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+821,822000,hindinibandh.in,Google Trust Services LLC,7778708.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+822,823000,hungarianlegends.hu,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+823,824000,impotarja.com,,,,,,
+824,825000,iqmetrics.org,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+825,826000,jcjucheng.com.tw,,,,,,
+826,827000,justlaw.com.tw,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+827,828000,kenjisugimoto.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+828,829000,koi88login.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+829,830000,laboratoriopretti.com.br,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+830,831000,lentesdecontacto365.es,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+831,832000,localsonly.com.ar,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+832,833000,lyes.tw,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+833,834000,mantigor.sch.id,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+834,835000,med-atlant.if.ua,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+835,836000,micredijamar.com,Google Trust Services LLC,7779560.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+836,837000,modexastyl.cz,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+837,838000,mssc.co.in,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+838,839000,myvetshop.fr,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+839,840000,neweracap.com.my,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+840,841000,ns-com.net,DigiCert Inc,33695999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+841,842000,omronhealthcare.com.tw,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+842,843000,overcube.com,,,,,,
+843,844000,patuljak.me,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+844,845000,photogov.com,GlobalSign nv-sa,34300799.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+845,846000,pokeka-atari.jp,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+846,847000,primenews.press,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+847,848000,qexch.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+848,849000,realindiansexclips.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+849,850000,rioschools.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+850,851000,saabwisonline.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+851,852000,savemore.com.tw,"TrustAsia Technologies, Inc.",31967999.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+852,853000,sesp.mt.gov.br,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+853,854000,shyam777.in,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+854,855000,slotfnegame.com,,,,,,
+855,856000,spa-lyon.org,GlobalSign nv-sa,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+856,857000,stopandgoal.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+857,858000,sweat.jp,DigiCert Inc,32486399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+858,859000,tcpharyana.gov.in,,,,,,
+859,860000,thefaceshop.in,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+860,861000,toeat.ca,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+861,862000,tribu.one,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+862,863000,ucuzpin.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+863,864000,usebemtevi.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+864,865000,vidaplenaysalud.site,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+865,866000,w8shippingua.com,"GoDaddy.com, Inc.",34300800.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+866,867000,wise.live,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+867,868000,xnxxhdvideo.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+868,869000,zaidimai.lt,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+869,870000,mecalac.com,Gandi,32831999.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+870,871000,superformance.com,Google Trust Services LLC,7779234.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+871,872000,ajanszero.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+872,873000,cdshuangsheng.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+873,874000,cloud-for-all.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+874,875000,wooshinchemtech.co.kr,,,,,,
+875,876000,fluoxetine.charity,,,,,,
+876,877000,poig.gov.pl,,,,,,
+877,878000,aklasbelafast.com,ZeroSSL,7862399.0,,4096.0,65537.0,b'sha384WithRSAEncryption'
+878,879000,firebrno.cz,"DigiCert, Inc.",32486399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+879,880000,mega-vulkan-official.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+880,881000,immosquare.com,ZeroSSL,7862399.0,,2048.0,65537.0,b'sha384WithRSAEncryption'
+881,882000,ahlijian.com,,,,,,
+882,883000,lmginsurance.co.th,,,,,,
+883,884000,shemayisrael.com,Sectigo Limited,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+884,885000,omhsi1.com,"GoDaddy.com, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+885,886000,americanboardortho.com,"GoDaddy.com, Inc.",34300800.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+886,887000,doublefocus.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+887,888000,frendscazino.shop,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+888,889000,infinitelifeelectric.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+889,890000,happybirthdaymsg.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+890,891000,netdiffusion.com,,,,,,
+891,892000,prorobat.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+892,893000,nhahatcheovietnam.vn,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+893,894000,natura-sciences.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+894,895000,onlineprestige-vulkan.com,"GoDaddy.com, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+895,896000,howolddoyoulook.com,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+896,897000,booicasino-lxh.top,,,,,,
+897,898000,hndianjiang.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+898,899000,victorpetfood.com,"GoDaddy.com, Inc.",31622400.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+899,900000,timestelegram.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+900,901000,online-tablet24.ru,,,,,,
+901,902000,hookyoup.com,,,,,,
+902,903000,wikistero.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+903,904000,vulkancasinoy12.xyz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+904,905000,primentos6960.com,,,,,,
+905,906000,coscup.org,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+906,907000,corvina.io,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+907,908000,reconyx.com,Sectigo Limited,30499199.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+908,909000,faststart.ai,Amazon,34127999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+909,910000,sv288.com,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+910,911000,roxcasino190.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+911,912000,due777.co,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+912,913000,slotozalonliney9.xyz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+913,914000,leapp.top,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+914,915000,azino777casino-cro.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+915,916000,gotfrag.com,,,,,,
+916,917000,marathonnn.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+917,918000,cassino-gurrru.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+918,919000,remodeladvisor.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+919,920000,churchlawandtax.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+920,921000,tdelga.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+921,922000,roxcasino460.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+922,923000,azino777playazino.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+923,924000,spinamba45.com,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+924,925000,zxcvn.xyz,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+925,926000,spadellandia.it,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+926,927000,undernylon.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+927,928000,antisocial.io,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+928,929000,coincapital.vip,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+929,930000,66zcp.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+930,931000,minipoliskids.ru,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+931,932000,letenkyzababku.sk,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+932,933000,eabzhvm.cn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+933,934000,vnsky.vn,DigiCert Inc,31622399.0,,256.0,,b'sha256WithRSAEncryption'
+934,935000,cdbocheng.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+935,936000,darkproject.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+936,937000,beasze.live,,,,,,
+937,938000,govmail.ke,,,,,,
+938,939000,egubjrc.cn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+939,940000,letysoft.sk,,,,,,
+940,941000,directory-daddy.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+941,942000,bizeeinternet.co.uk,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+942,943000,dragnetnigeria.com,Let's Encrypt,7775999.0,,3072.0,65537.0,b'sha256WithRSAEncryption'
+943,944000,casinofreespins29.ru,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+944,945000,pokerdom26fd.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+945,946000,landesbibliothek.at,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+946,947000,geedorah.com,,,,,,
+947,948000,agrovision.nl,Let's Encrypt,7775999.0,,384.0,,b'sha256WithRSAEncryption'
+948,949000,banynyc.com,,,,,,
+949,950000,tywhh.com,Sectigo Limited,31708799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+950,951000,wn548.cn,,,,,,
+951,952000,pedidosya.cr,"Cloudflare, Inc.",31535999.0,,256.0,,b'ecdsa-with-SHA256'
+952,953000,vavadargn.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+953,954000,360.io,,,,,,
+954,955000,template-toolkit.org,,,,,,
+955,956000,compliancecoordinator.org,Sectigo Limited,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+956,957000,hischannel.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+957,958000,biotechnologia.pl,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+958,959000,slottica-casino.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+959,960000,4it.com.au,Sectigo Limited,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+960,961000,disastorefront.com,,,,,,
+961,962000,epicwow.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+962,963000,wheretherebedragons.com,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+963,964000,maxbetslots-iqg.buzz,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+964,965000,pinup-ru-2-amp-23-12-6.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+965,966000,iro63.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+966,967000,fulianx.cn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+967,968000,topslotsite.com,Let's Encrypt,7775999.0,,256.0,,b'sha256WithRSAEncryption'
+968,969000,cherryterrace.co.jp,,,,,,
+969,970000,desktopwallpapers.ru,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+970,971000,paypal-takeabreak.com,,,,,,
+971,972000,mercerbell.com.au,,,,,,
+972,973000,ramhal.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+973,974000,jetteknoloji.com,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+974,975000,eccontainer.cn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+975,976000,qbsol.net,,,,,,
+976,977000,bezdep-casinos1.space,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+977,978000,flipflopflyin.com,,,,,,
+978,979000,250.com.au,ZeroSSL,7862399.0,,256.0,,b'ecdsa-with-SHA384'
+979,980000,iscqg.cn,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+980,981000,kubatana.net,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+981,982000,wl258.cn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+982,983000,grimace.life,,,,,,
+983,984000,jellice-cart.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+984,985000,forenverzeichnis.com,Let's Encrypt,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+985,986000,mael-tv.online,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+986,987000,serenitycoast.com,GoGetSSL,34300799.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+987,988000,tjluyang.com,,,,,,
+988,989000,a2btrack.com,,,,,,
+989,990000,fcgcfw.cn,Google Trust Services LLC,7775999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+990,991000,incrementx.com,Unizeto Technologies S.A.,31535999.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+991,992000,ip-135-125-188.eu,,,,,,
+992,993000,huismarseille.nl,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+993,994000,wlkdreamx.com,Let's Encrypt,7775999.0,,4096.0,65537.0,b'sha256WithRSAEncryption'
+994,995000,loginhood.io,,,,,,
+995,996000,myubi.tv,Let's Encrypt,7775999.0,,256.0,,b'ecdsa-with-SHA384'
+996,997000,champion-casino-rwd.buzz,DigiCert Inc,31622399.0,,2048.0,65537.0,b'sha256WithRSAEncryption'
+997,998000,xn--e02bi23c.biz,"Cloudflare, Inc.",31622399.0,,256.0,,b'ecdsa-with-SHA256'
+998,999000,zerkalo-playfortuna.ru,,,,,,
+999,1000000,jgshh.de,,,,,,
