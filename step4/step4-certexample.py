@@ -4,6 +4,10 @@ import socket
 import OpenSSL
 import pandas as pd
 
+
+TOPSITES = "step0-topsites.csv"
+OTHERSITES = "step0-othersites.csv"
+
 def prepare_dataframe(cert_info_list_list):
 
     column_names = [
@@ -158,6 +162,7 @@ def get_row_for_website(website='google.com'):
     else:
         print(f"SOMEHOW GOT OTHER KEY: {pub_key_type}")
     """
+
     pub_key_len = pub_key.bits()
 
     #6 RSA
@@ -208,11 +213,21 @@ def try_csv(csv_path="topsite_small.csv"):
     df = pd.read_csv(csv_path, names=['ranking','domain'])
     ROW = 1
     application = df.apply(try_domain_from_pandas_row, axis=ROW)
+
+
+    row_names = [
+        "org_name",
+        "time_difference_in_seconds_float",
+        "crypto_algorithm",
+        "pub_key_len",
+        "pub_key_exp",
+        "sign_alg",
+        ]
     print(application)
-    return
+
 
     # https://stackoverflow.com/questions/29550414/how-can-i-split-a-column-of-tuples-in-a-pandas-dataframe
-    df[['HTTP availability','status code']] = pd.DataFrame(application.tolist(), index=df.index)
+    df[row_names] = pd.DataFrame(application.tolist(), index=df.index)
 
     # actually save the output to avoid misery of a useless long run
 
@@ -221,9 +236,9 @@ def try_csv(csv_path="topsite_small.csv"):
 
     # requested output CSV names from assignment
     if csv_path == TOPSITES:
-        output_path = "step3-topsites-requests.csv"
+        output_path = "step4-topsites-certs.csv"
     elif csv_path == OTHERSITES:
-        output_path = "step3-othersites-requests.csv"
+        output_path = "step4-othersites-certs.csv"
 
     if output_path == csv_path:
         output_path += "_1.csv"
@@ -243,6 +258,7 @@ def test_time_difference():
     print(diff)
 
 if __name__ == "__main__":
-    try_csv()
+    try_csv(TOPSITES)
+    try_csv(OTHERSITES)
 
 
