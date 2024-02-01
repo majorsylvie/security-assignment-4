@@ -133,8 +133,31 @@ def get_row_for_website(website='google.com'):
     # the type()
     # thanks stack overflow
     # https://stackoverflow.com/questions/75440/how-do-i-get-the-string-with-name-of-a-class
-    crypto_algorithm = pub_key.to_cryptography_key().__class__.__name__
+    # crypto_algorithm = pub_key.to_cryptography_key().__class__.__name__
+    crypto_algorithm = None
+    if pub_key_type == OpenSSL.crypto.TYPE_RSA: # 6
+        crypo_algorithm = "RSA"
+    elif pub_key_type == OpenSSL.crypto.TYPE_DSA: # 116
+        crypo_algorithm = "DSA"
+    elif pub_key_type == OpenSSL.crypto.TYPE_EC: # 408
+        crypo_algorithm = "Elliptic Curve"
+    elif pub_key_type == OpenSSL.crypto.TYPE_DH: # 28
+        crypo_algorithm = "Diffie–Hellman"
+    else:
+        print(f"SOMEHOW GOT OTHER KEY: {pub_key_type}")
 
+    """
+    if pub_key_type == 6: #: OpenSSL.crypto.TYPE_RSA: # 6
+        crypto_algorithm == "RSA:"
+    elif pub_key_type == 116: # OpenSSL.crypto.TYPE_DSA: # 116
+        crypto_algorithm = "DSA"
+    elif pub_key_type == 408: # OpenSSL.crypto.TYPE_EC: # 408
+        crypto_algorithm = "Elliptic Curve"
+    elif pub_key_type == 28: #  OpenSSL.crypto.TYPE_DH: # 28
+        crypto_algorithm = "Diffie–Hellman"
+    else:
+        print(f"SOMEHOW GOT OTHER KEY: {pub_key_type}")
+    """
     pub_key_len = pub_key.bits()
 
     #6 RSA
