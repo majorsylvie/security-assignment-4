@@ -87,6 +87,15 @@ sign_alg = x509.get_signature_algorithm()
 
 pub_key = x509.get_pubkey()
 pub_key_type = pub_key.type()
+
+# final class and name attributes
+# should extract the name of the class 
+# as a string, which is nicer than 
+# the type()
+# thanks stack overflow
+# https://stackoverflow.com/questions/75440/how-do-i-get-the-string-with-name-of-a-class
+crypto_algorithm = pub_key.to_cryptography_key().__class__.__name__
+
 pub_key_len = pub_key.bits()
 
 #6 RSA
@@ -97,6 +106,23 @@ pub_key_exp = None
 if pub_key_type == OpenSSL.crypto.TYPE_RSA:
     pub_key_exp = pub_key.to_cryptography_key().public_numbers().exponent()
 
+
+
+"""
+row = [
+org_name,
+time_differences_in_seconds_float,
+pub_key_type
+pub_key_len,
+
+
+immediate CA,
+time diff,
+crypto algo,
+key length,
+optional exponent,
+signature algorithm
+"""
 print(
         f"org_name = {org_name} : {type(org_name)}\n"
         f"start_time = {start_time} : {type(start_time)}\n"
