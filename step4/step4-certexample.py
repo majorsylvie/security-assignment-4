@@ -4,60 +4,6 @@ import socket
 import OpenSSL
 import pandas as pd
 
-website = 'google.com'
-ctx = ssl.create_default_context()
-connection = socket.create_connection((website, 443))
-s = ctx.wrap_socket(connection, server_hostname=website)
-cert = s.getpeercert(True)
-s.close()
-cert = ssl.DER_cert_to_PEM_cert(cert)
-x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert) 
-print(x509)
-
-"""
-cert fields I care about:
-    organization name
-
-    start time
-    end time
-
-    signature algorithm
-
-    public key
-        type
-        len
-
-    if OpenSSL.crypto.TYPE_RSA:
-        public key expojnent
-
-"""
-"""
-map dictionary of:
-    oganization name to count certificates issued
-    and produce alphbetical list
-        certificate amount and frequency per CA
-
-    difference in times
-        min
-        max
-        also patterns
-        want to associate time difference and CA
-
-    cryprtographic algorithms (pubkey type)
-        frequency
-
-    key lengths
-        frequencty
-
-    public key RSA exponent
-        associate with CA
-
-
-
-    rows with:
-        immediate CA, time diff, crypto algo, key length, optional exponent, signature algorithm
-"""
-
 def prepare_dataframe(cert_info_list_list):
 
     column_names = [
@@ -70,71 +16,6 @@ def prepare_dataframe(cert_info_list_list):
             ]
     df = pd.DataFrame(cert_info_list_list,columns=column_names)
     return df
-
-
-# https://www.pyopenssl.org/en/latest/api/crypto.html
-
-org_name = x509.get_issuer().organizationName
-
-# The timestamps are formatted as an ASN.1 TIME:
-#   YYYYMMDDhhmmssZ
-# Watch out, these can return None.
-start_time = x509.get_notBefore()
-end_time = x509.get_notAfter()
-time_difference_in_seconds_float = find_second_difference_for_asn_times(start_time, end_time)
-
-sign_alg = x509.get_signature_algorithm()
-
-pub_key = x509.get_pubkey()
-pub_key_type = pub_key.type()
-
-# final class and name attributes
-# should extract the name of the class 
-# as a string, which is nicer than 
-# the type()
-# thanks stack overflow
-# https://stackoverflow.com/questions/75440/how-do-i-get-the-string-with-name-of-a-class
-crypto_algorithm = pub_key.to_cryptography_key().__class__.__name__
-
-pub_key_len = pub_key.bits()
-
-#6 RSA
-#116 DSA
-#408 EllipticCurve
-
-pub_key_exp = None
-if pub_key_type == OpenSSL.crypto.TYPE_RSA:
-    pub_key_exp = pub_key.to_cryptography_key().public_numbers().exponent()
-
-
-
-"""
-row = [
-org_name,
-time_differences_in_seconds_float,
-pub_key_type
-pub_key_len,
-
-
-immediate CA,
-time diff,
-crypto algo,
-key length,
-optional exponent,
-signature algorithm
-"""
-print(
-        f"org_name = {org_name} : {type(org_name)}\n"
-        f"start_time = {start_time} : {type(start_time)}\n"
-        f"end_time = {end_time} : {type(end_time)}\n"
-        f"signature_alg ] {sign_alg} : {type(sign_alg)}\n"
-        f"pub_key_type = {pub_key_type} : {type(pub_key_type)}\n"
-        f"pub_key_len = {pub_key_len} : {type(pub_key_len)}\n"
-        f"pub_key_exp = {pub_key_exp} : {type(pub_key_exp)}\n"
-)
-
-
-
 
 #   YYYYMMDDhhmmssZ
 def turn_ASN1_time_to_datetime(asn_time: bytes):
@@ -169,7 +50,127 @@ def find_second_difference_for_asn_times(asn_time_1: bytes, asn_time_2: bytes) -
 
     return second_difference
 
-if __name__ == "__main__":
+def try_one_website(website='google.com'):
+
+    ctx = ssl.create_default_context()
+    connection = socket.create_connection((website, 443))
+    s = ctx.wrap_socket(connection, server_hostname=website)
+    cert = s.getpeercert(True)
+    s.close()
+    cert = ssl.DER_cert_to_PEM_cert(cert)
+    x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert) 
+    print(x509)
+
+    """
+    cert fields I care about:
+        organization name
+
+        start time
+        end time
+
+        signature algorithm
+
+        public key
+            type
+            len
+
+        if OpenSSL.crypto.TYPE_RSA:
+            public key expojnent
+
+    """
+    """
+    map dictionary of:
+        oganization name to count certificates issued
+        and produce alphbetical list
+            certificate amount and frequency per CA
+
+        difference in times
+            min
+            max
+            also patterns
+            want to associate time difference and CA
+
+        cryprtographic algorithms (pubkey type)
+            frequency
+
+        key lengths
+            frequencty
+
+        public key RSA exponent
+            associate with CA
+
+
+
+        rows with:
+            immediate CA, time diff, crypto algo, key length, optional exponent, signature algorithm
+    """
+
+
+
+    # https://www.pyopenssl.org/en/latest/api/crypto.html
+
+    org_name = x509.get_issuer().organizationName
+
+    # The timestamps are formatted as an ASN.1 TIME:
+    #   YYYYMMDDhhmmssZ
+    # Watch out, these can return None.
+    start_time = x509.get_notBefore()
+    end_time = x509.get_notAfter()
+    time_difference_in_seconds_float = find_second_difference_for_asn_times(start_time, end_time)
+
+    sign_alg = x509.get_signature_algorithm()
+
+    pub_key = x509.get_pubkey()
+    pub_key_type = pub_key.type()
+
+    # final class and name attributes
+    # should extract the name of the class 
+    # as a string, which is nicer than 
+    # the type()
+    # thanks stack overflow
+    # https://stackoverflow.com/questions/75440/how-do-i-get-the-string-with-name-of-a-class
+    crypto_algorithm = pub_key.to_cryptography_key().__class__.__name__
+
+    pub_key_len = pub_key.bits()
+
+    #6 RSA
+    #116 DSA
+    #408 EllipticCurve
+
+    pub_key_exp = None
+    if pub_key_type == OpenSSL.crypto.TYPE_RSA:
+        pub_key_exp = pub_key.to_cryptography_key().public_numbers().exponent()
+
+
+
+    """
+    row = [
+    org_name,
+    time_differences_in_seconds_float,
+    pub_key_type
+    pub_key_len,
+
+
+    immediate CA,
+    time diff,
+    crypto algo,
+    key length,
+    optional exponent,
+    signature algorithm
+    """
+    print(
+            f"org_name = {org_name} : {type(org_name)}\n"
+            f"start_time = {start_time} : {type(start_time)}\n"
+            f"end_time = {end_time} : {type(end_time)}\n"
+            f"signature_alg ] {sign_alg} : {type(sign_alg)}\n"
+            f"pub_key_type = {pub_key_type} : {type(pub_key_type)}\n"
+            f"pub_key_len = {pub_key_len} : {type(pub_key_len)}\n"
+            f"pub_key_exp = {pub_key_exp} : {type(pub_key_exp)}\n"
+    )
+
+
+
+def test_time_difference():
     asn1 = b"20240131103045Z"
     asn1 = b"20240201080808Z"
     asn2 = b"20250201080809Z"
@@ -178,5 +179,8 @@ if __name__ == "__main__":
     diff = find_second_difference_for_asn_times(asn1,asn2)
 
     print(diff)
+
+if __name__ == "__main__":
+    try_one_website()
 
 
