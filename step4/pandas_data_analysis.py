@@ -37,8 +37,6 @@ def read_certs_csv(csv_path="topsite_small.csvOUTPUT.csv"):
     # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html
     df.drop(index=0, inplace=True)
 
-    print(df)
-    print(df.columns)
     return df
 
 def analyze_df(df):
@@ -71,17 +69,22 @@ def analyze_df(df):
     # org_name sorted by the amount of ceritifcates issued
     #     subsorted alphabetically
     df = df.sort_values(by='org_name')
+
+
+    print(f"CA TO FREQUENCY:");
     org_name_group = df.groupby('org_name')
     org_name_counts = org_name_group['org_name'].count().sort_values(ascending=False)
     print(f"org_name_counts = {org_name_counts}")
 
-    print(f"==================================="); 
-
     #min and max  time_difference_in_seconds
+    print(f"\n==================================="); 
+    print(f"CERT VALIDITY DURATION STATS:");
+    print(f"===================================\n"); 
+
     min_time_global = df['time_difference_in_seconds_float'].min()
     max_time_global = df['time_difference_in_seconds_float'].max()
-    print(f"min valid cert time: {min_time_global * 60 * 60 * 24}")
-    print(f"max valid cert time: {max_time_global * 60 * 60 * 24}")
+    print(f"min valid cert time: {min_time_global / 60 / 60 / 24}")
+    print(f"max valid cert time: {max_time_global / 60 / 60 / 24}")
 
     print()
     #average and median time_differnce_in_seconds grouped by org_name
@@ -89,18 +92,51 @@ def analyze_df(df):
     print(f"avg validity time by cert:\n\n{avg_time_by_cert}")
 
 
-    print(f"==================================="); 
+    print(f"\n==================================="); 
+    print(f"CRYPTO ALGORITHM FREQUENCY:");
+    print(f"===================================\n"); 
 
     # dataframe/csv of cryptographic algorithm an frequency
-    print(df['crypto_algorithm'])
     crypto_group = df.groupby('crypto_algorithm')
-    crypto_counts = crypto_group['crypto_algorithm'].groups.keys()
+    crypto_counts = crypto_group['crypto_algorithm'].count().sort_values(ascending=False)
     print(f"crypto_counts = {crypto_counts}")
+
+
+    print(f"\n==================================="); 
+    print(f"KEY LENGTH AND EXPONENT STATS");
+    print(f"===================================\n"); 
+    # all unique key lengths
+    key_lengths = sorted(df['pub_key_len'].unique())
+    print(f"Uniue Key Lengths: {key_lengths}\n");    
+                                 
+    # all unique RSA public key exponents 
+    #     BROADER COMPARISON ACROSS SITES
+    pub_key_exponents = df['pub_key_exp'].unique()
+    print(f"Unique Public Key Exponents: {pub_key_exponents}");    
+    
+    print(f"\n==================================="); 
+    print(f"SIGNATURE ALGORITHM FREQUENCY:");
+    print(f"===================================\n"); 
+    # dataframe/csv of signature algorithm to frequency
+    sign_alg_group = df.groupby('sign_alg')
+    sign_alg_counts = sign_alg_group['sign_alg'].count().sort_values(ascending=False)
+    print(f"sign_alg_counts = {sign_alg_counts}")
+
+
+
+
 
 if __name__ == "__main__":
     df = read_certs_csv(TOPSITES)
     print()
+    print(f"\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
+    print(f"TOP SITES STEP 4 DATA ANALYSIS:");
+    print(f"=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n");
     analyze_df(df)
-    # read_certs_csv(OTHERSITES)
+    print(f"\n\n\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+");
+    print(f"OTHER SITES STEP 4 DATA ANALYSIS:");
+    print(f"=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+\n");
+    df = read_certs_csv(OTHERSITES)
+    analyze_df(df)
 
 
