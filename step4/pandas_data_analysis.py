@@ -38,6 +38,7 @@ def read_certs_csv(csv_path="topsite_small.csvOUTPUT.csv"):
     df.drop(index=0, inplace=True)
 
     print(df)
+    print(df.columns)
     return df
 
 def analyze_df(df):
@@ -67,20 +68,34 @@ def analyze_df(df):
     """
     #ranking,domain,org_name,time_difference_in_seconds_float,crypto_algorithm,pub_key_len,pub_key_exp,sign_alg
 
+    # org_name sorted by the amount of ceritifcates issued
+    #     subsorted alphabetically
     df = df.sort_values(by='org_name')
     org_name_group = df.groupby('org_name')
     org_name_counts = org_name_group['org_name'].count().sort_values(ascending=False)
     print(f"org_name_counts = {org_name_counts}")
-    avg_time_by_cert = org_name_group['time_difference_in_seconds_float'].mean()
 
+    print(f"==================================="); 
+
+    #min and max  time_difference_in_seconds
     min_time_global = df['time_difference_in_seconds_float'].min()
     max_time_global = df['time_difference_in_seconds_float'].max()
-    print(f"number of groups: {org_name_group.ngroups}")
-    print(f"groups: {org_name_group.groups.keys()}")
-    print(f"min time: {min_time_global}")
-    print(f"max time: {max_time_global}")
+    print(f"min valid cert time: {min_time_global * 60 * 60 * 24}")
+    print(f"max valid cert time: {max_time_global * 60 * 60 * 24}")
+
+    print()
+    #average and median time_differnce_in_seconds grouped by org_name
+    avg_time_by_cert = org_name_group['time_difference_in_seconds_float'].mean().apply(lambda x: x/(60*60*24))
+    print(f"avg validity time by cert:\n\n{avg_time_by_cert}")
 
 
+    print(f"==================================="); 
+
+    # dataframe/csv of cryptographic algorithm an frequency
+    print(df['crypto_algorithm'])
+    crypto_group = df.groupby('crypto_algorithm')
+    crypto_counts = crypto_group['crypto_algorithm'].groups.keys()
+    print(f"crypto_counts = {crypto_counts}")
 
 if __name__ == "__main__":
     df = read_certs_csv(TOPSITES)
