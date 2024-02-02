@@ -1,9 +1,14 @@
 from  datetime import datetime
 import ssl
 import socket
+socket.setdefaulttimeout(9)
 import OpenSSL
 import pandas as pd
 
+from parallel_pandas import ParallelPandas
+
+#initialize parallel-pandas
+ParallelPandas.initialize(split_factor=50, disable_pr_bar=True)
 
 TOPSITES = "step0-topsites.csv"
 OTHERSITES = "step0-othersites.csv"
