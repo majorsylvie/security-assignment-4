@@ -119,8 +119,6 @@ def run_it_all(top=True):
     driver = webdriver.Chrome(options=options)
 
     driver.set_page_load_timeout(10)
-    try_csv(driver=driver)
-    return
 
     if top:
         try_csv(csv_path=TOPSITES,driver=driver)
@@ -132,5 +130,11 @@ def run_it_all(top=True):
 
 
 if __name__ == "__main__":
-    run_it_all(top=True)
-    #run_it_all(top=False)
+    top_process = Process(target=run_it_all,args=(True,))
+    other_process = Process(target=run_it_all,args=(False,))
+    top_process.start()
+    other_process.start()
+    top_process.join()
+    other_process.join()
+    print(f"WOOOOO done with seleinium B)")
+
