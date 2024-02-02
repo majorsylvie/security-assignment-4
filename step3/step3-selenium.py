@@ -7,6 +7,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import time
 from pyvirtualdisplay import Display
+import pandas as pd
+from multiprocessing import Process
 
 HTTP_ONLY='HTTPonly'
 HTTPS_ONLY='HTTPSonly'
@@ -16,10 +18,12 @@ NEITHER_HTTP_NOR_HTTPS='neither'
 HTTPS='https'
 HTTP='http'
 
+TOPSITES='step0-topsites.csv'
+OTHERSITES='step0-othersites.csv'
 
 
 
-def try_one_domain(domain="google.com"):
+def try_one_domain(driver,domain="google.com"):
     """
     function to try a single domain via selenium, will do both 
     the http and https get and return the value to be associated 
@@ -61,10 +65,47 @@ def try_one_domain(domain="google.com"):
 
 
     # decide output:
-    #if http_response_scheme == 
+    if http_response_scheme == HTTP and https_response_scheme == HTTPS:
+        return BOTH_HTTP_AND_HTTPS
+    if http_response_scheme == HTTP and https_response_scheme is None:
+        return HTTP_ONLY
+    if http_response_scheme is None and https_response_scheme == HTTPS:
+        return HTTPS_ONLY
+    if http_response_scheme is None and https_response_scheme is None:
+        return NEITHER_HTTP_NOR_HTTPS
+    else:
+        print(f"FAILED TO PARSE HTTPS RESPONSE CODE")
+        print(f"response schemes: \n\tHTTP : {http_response_scheme}\n\tHTTPS: {https_response_scheme}")
+        return None
 
+def try_domain_from_pandas_row(row,driver):
+    domain = row['domain']
+    result = try_one_domain(driver,domain=domain)
+    return result
 
-if __name__ == "__main__":
+def try_csv(driver,csv_path="topsite_small.csv"):
+    df = pd.read_csv(csv_path, names=['ranking','domain'])
+    ROW = 1
+    df['http result'] = df.apply(try_domain_from_pandas_row, driver=driver, axis=ROW)
+
+    # default path for testing input
+    output_path = csv_path + "OUTPUT.csv"
+
+    # requested output CSV names from assignment
+    if csv_path == TOPSITES:
+        output_path = "step4-topsites-certs.csv"
+    elif csv_path == OTHERSITES:
+        output_path = "step4-othersites-certs.csv"
+
+    if output_path == csv_path:
+        output_path += "_1.csv"
+
+    print(df)
+    # drop previous headers
+    df = df[df['domain'] != 'domain']
+    df.to_csv(output_path, index=False)
+
+def run_it_all(top=True):
     display = Display(visible=0, size=(800, 600))
     display.start()
 
@@ -78,9 +119,18 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(options=options)
 
     driver.set_page_load_timeout(10)
+    try_csv(driver=driver)
+    return
 
-    print(try_one_domain("squid-cache.org"))
-
+    if top:
+        try_csv(csv_path=TOPSITES,driver=driver)
+    else:
+        try_csv(csv_path=OTHERSITES,driver=driver)
 
     driver.quit()
     display.stop()
+
+
+if __name__ == "__main__":
+    run_it_all(top=True)
+    #run_it_all(top=False)

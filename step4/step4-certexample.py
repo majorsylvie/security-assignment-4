@@ -140,15 +140,17 @@ def get_row_for_website(website='google.com'):
     # crypto_algorithm = pub_key.to_cryptography_key().__class__.__name__
     crypto_algorithm = None
     if pub_key_type == OpenSSL.crypto.TYPE_RSA: # 6
-        crypo_algorithm = "RSA"
+        crypto_algorithm = "RSA"
     elif pub_key_type == OpenSSL.crypto.TYPE_DSA: # 116
-        crypo_algorithm = "DSA"
+        crypto_algorithm = "DSA"
     elif pub_key_type == OpenSSL.crypto.TYPE_EC: # 408
-        crypo_algorithm = "Elliptic Curve"
+        crypto_algorithm = "Elliptic Curve"
     elif pub_key_type == OpenSSL.crypto.TYPE_DH: # 28
-        crypo_algorithm = "Diffie–Hellman"
+        crypto_algorithm = "Diffie–Hellman"
     else:
         print(f"SOMEHOW GOT OTHER KEY: {pub_key_type}")
+
+
 
     """
     if pub_key_type == 6: #: OpenSSL.crypto.TYPE_RSA: # 6
@@ -258,6 +260,7 @@ def test_time_difference():
     print(diff)
 
 if __name__ == "__main__":
+    #try_csv()
     try_csv(TOPSITES)
     print("\n\n\n\n\n\nOTHER SITES BELOW\n\n\n\n\n")
     try_csv(OTHERSITES)
