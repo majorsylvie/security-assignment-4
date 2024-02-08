@@ -214,14 +214,6 @@ def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
     # then successfully return my tuple!
     return (ghost_port,server_port)
 
-
-
-
-    tcp['tcp.seq']
-    tcp['tcp.ack']
-    tcp['tcp.flags_tree']
-
-
 if __name__ == "__main__":
     with open("ghost2024.json", "r") as ghost2024:
         packets = json.load(ghost2024)
