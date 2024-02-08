@@ -116,10 +116,19 @@ def generate_flows_dict(packets):
 
     # default dict so I can guarentee append even if this is the first discovered packet 
     flows: Dict[Optional[Tuple[int,int]],List[Dict[str,int | float | bool]]] = defaultdict(list)
+
+    # string keys typing for testing, explanatory comment in for loop
+    # flows: Dict[str,List[Dict[str,int | float | bool]]] = defaultdict(list)
     
     for packet in packets:
         flow_tuple,slimmed_packet_dict = get_flow_for_and_slim_packet(packet)
         flows[flow_tuple].append(slimmed_packet_dict)
+
+        # alternate key's-as-strings for serializing the JSON and saving in a file
+        # to validate that my code behaves as I want in final submission 
+        # this flows dict will be disposed of where all I care about is the final data analysis.
+        # string_flow_tuple = str(flow_tuple)
+        # flows[string_flow_tuple].append(slimmed_packet_dict)
 
     return flows
 
@@ -269,13 +278,6 @@ def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
     # then successfully return my tuple!
     return (ghost_port,server_port)
 
-if __name__ == "__main__":
-    with open("ghost2024.json", "r") as ghost2024:
-        packets = json.load(ghost2024)
-        flows_dict =generate_flows_dict(packets)
-
-        print(flows_dict.keys())
-
 """
 JSON field checking:
 
@@ -298,3 +300,11 @@ tcp = layers['tcp']
     tcp['tcp.flags_tree']
 
 """
+
+if __name__ == "__main__":
+    with open("ghost2024.json", "r") as ghost2024:
+        packets = json.load(ghost2024)
+        flows_dict =generate_flows_dict(packets)
+        print(flows_dict)
+
+
