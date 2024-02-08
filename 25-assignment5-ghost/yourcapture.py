@@ -11,6 +11,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 BC = 'https://blase.courses/'
+SLEEP_DURATION_IN_SECONDS = 20
+
 def make_url(ghost_hash: int)-> str:
     """
     function to take in just a number from the HTML path in blase.courses
@@ -90,7 +92,7 @@ def visit_one_page(browser, hash_number=None,sleep=True):
 
     # controlled sleep
     if sleep:
-        time.sleep(20)
+        time.sleep(SLEEP_DURATION_IN_SECONDS)
 
 
     browser.quit()
@@ -103,21 +105,52 @@ PAGES = {
         5235101353139427677: [ 802362620749745974, 6845881726168158209, 1541437922809678587],
         }
 
-if __name__ == "__main__":
+def visit_all_pages_depth_1():
+    """
+    helper function to do all the visiting, 
+    starting at the index, 
+    then the ghost's starting page (5235...)
+    then each of the linked pages on 5235 in printed order
 
-    hash_number = PAGES['ghost_start']
+    waiting 20 seconds between each, closing the browser like ghost does each time
+
+    thus I can run wireshark while just running this function and get a sample of all the pages! 
+    woooo
+
+    Inputs:
+        None
+
+    Outputs:
+        None, wireshark should capture the packet data
+    """
 
     chrome_options = get_selenium_browser_options()
+    first_page = PAGES["ghost_start"]
+
+    # None added such that the index is visited
+    hash_number_list = [None, first_page]+ PAGES[first_page]
+
+    for hash_number in hash_number_list:
+        make_new_browser_and_visit_page(chrome_options=chrome_options,hash_number=hash_number)
+
+def make_new_browser_and_visit_page(chrome_options,hash_number=None):
+    """
+    helper to fully create a new browser from the chrome options 
+    and visit the page indicated by the hash number.
+
+    If the hash number is None, then visit-one_page will visit the index
+
+    Inputs:
+        chrome_options: the same chrome_options to be used for all visits
+        hash_number : hash number representing the webpage to visit
+
+    Outputs:
+        None
+    """
     browser = get_new_selenium_browser(chrome_options)
-
-    visit_one_page(browser=browser,sleep=True)
-
-    browser = get_new_selenium_browser(chrome_options)
-
     visit_one_page(browser=browser,hash_number=hash_number)
 
 
 
-    browser.quit()
-
-
+if __name__ == "__main__":
+    visit_all_pages_depth_1()
