@@ -178,7 +178,7 @@ def get_flow_for_and_slim_packet(packet,ghost_ip="192.168.1.101",server_ip="128.
 
 
 
-def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]]:
+def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]:
     """
     Function to take in the frame, ip, and tcp layers of a packet 
     and return a dictionary of the slimmed representation. 
