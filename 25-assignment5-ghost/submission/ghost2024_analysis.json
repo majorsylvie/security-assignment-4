@@ -1,0 +1,212 @@
+{
+  "(48028, 80)": {
+    "total_bytes_from_server": 1,
+    "min_time": 7.711001482,
+    "max_time": 31.097243005,
+    "time_range_string": "[7, 31]"
+  },
+  "(41384, 443)": {
+    "total_bytes_from_server": 5849,
+    "min_time": 7.746539299,
+    "max_time": 31.095284182,
+    "time_range_string": "[7, 31]"
+  },
+  "(36934, 443)": {
+    "total_bytes_from_server": 150041,
+    "min_time": 32.799556948,
+    "max_time": 55.173372217,
+    "time_range_string": "[32, 55]"
+  },
+  "(36946, 443)": {
+    "total_bytes_from_server": 89279,
+    "min_time": 32.912080379,
+    "max_time": 55.173499101,
+    "time_range_string": "[32, 55]"
+  },
+  "(43666, 443)": {
+    "total_bytes_from_server": 98955,
+    "min_time": 56.775280252,
+    "max_time": 81.118633913,
+    "time_range_string": "[56, 81]"
+  },
+  "(43680, 443)": {
+    "total_bytes_from_server": 91210,
+    "min_time": 56.868942063,
+    "max_time": 81.118783963,
+    "time_range_string": "[56, 81]"
+  },
+  "(40398, 443)": {
+    "total_bytes_from_server": 6264,
+    "min_time": 82.791534317,
+    "max_time": 107.074651271,
+    "time_range_string": "[82, 107]"
+  },
+  "(35412, 443)": {
+    "total_bytes_from_server": 6089,
+    "min_time": 108.999287803,
+    "max_time": 133.310755036,
+    "time_range_string": "[108, 133]"
+  },
+  "(52540, 443)": {
+    "total_bytes_from_server": 7940,
+    "min_time": 134.983295834,
+    "max_time": 159.270942386,
+    "time_range_string": "[134, 159]"
+  },
+  "(35304, 443)": {
+    "total_bytes_from_server": 54671,
+    "min_time": 160.940001017,
+    "max_time": 184.282887223,
+    "time_range_string": "[160, 184]"
+  },
+  "(35314, 443)": {
+    "total_bytes_from_server": 73370,
+    "min_time": 161.041139724,
+    "max_time": 184.283492987,
+    "time_range_string": "[161, 184]"
+  },
+  "(57532, 443)": {
+    "total_bytes_from_server": 121737,
+    "min_time": 185.945648684,
+    "max_time": 207.316325762,
+    "time_range_string": "[185, 207]"
+  },
+  "(57548, 443)": {
+    "total_bytes_from_server": 94588,
+    "min_time": 186.033954483,
+    "max_time": 207.316415643,
+    "time_range_string": "[186, 207]"
+  },
+  "(47964, 443)": {
+    "total_bytes_from_server": 50928,
+    "min_time": 208.934124025,
+    "max_time": 231.231930269,
+    "time_range_string": "[208, 231]"
+  },
+  "(60510, 443)": {
+    "total_bytes_from_server": 353824,
+    "min_time": 232.945355967,
+    "max_time": 257.309171428,
+    "time_range_string": "[232, 257]"
+  },
+  "(60524, 443)": {
+    "total_bytes_from_server": 57921,
+    "min_time": 233.038608182,
+    "max_time": 257.309027968,
+    "time_range_string": "[233, 257]"
+  },
+  "(60538, 443)": {
+    "total_bytes_from_server": 48270,
+    "min_time": 233.086527291,
+    "max_time": 257.309363399,
+    "time_range_string": "[233, 257]"
+  },
+  "(60540, 443)": {
+    "total_bytes_from_server": 349,
+    "min_time": 233.086528541,
+    "max_time": 257.309173039,
+    "time_range_string": "[233, 257]"
+  },
+  "(50752, 443)": {
+    "total_bytes_from_server": 84182,
+    "min_time": 258.963706495,
+    "max_time": 282.27783961,
+    "time_range_string": "[258, 282]"
+  },
+  "(57268, 443)": {
+    "total_bytes_from_server": 6747,
+    "min_time": 284.063459504,
+    "max_time": 306.332184036,
+    "time_range_string": "[284, 306]"
+  },
+  "(42286, 443)": {
+    "total_bytes_from_server": 105267,
+    "min_time": 308.027451147,
+    "max_time": 329.376661957,
+    "time_range_string": "[308, 329]"
+  },
+  "(42302, 443)": {
+    "total_bytes_from_server": 96109,
+    "min_time": 308.115220993,
+    "max_time": 329.380876078,
+    "time_range_string": "[308, 329]"
+  },
+  "(39492, 443)": {
+    "total_bytes_from_server": 149822,
+    "min_time": 330.999885871,
+    "max_time": 352.328450515,
+    "time_range_string": "[330, 352]"
+  },
+  "(39496, 443)": {
+    "total_bytes_from_server": 89875,
+    "min_time": 331.090916643,
+    "max_time": 352.328595364,
+    "time_range_string": "[331, 352]"
+  },
+  "(38434, 443)": {
+    "total_bytes_from_server": 8273,
+    "min_time": 353.939448017,
+    "max_time": 376.184172881,
+    "time_range_string": "[353, 376]"
+  },
+  "(40540, 443)": {
+    "total_bytes_from_server": 6772,
+    "min_time": 377.835812579,
+    "max_time": 401.113283168,
+    "time_range_string": "[377, 401]"
+  },
+  "(35644, 443)": {
+    "total_bytes_from_server": 62979,
+    "min_time": 402.757050819,
+    "max_time": 424.097613765,
+    "time_range_string": "[402, 424]"
+  },
+  "(33066, 443)": {
+    "total_bytes_from_server": 7374,
+    "min_time": 425.780682584,
+    "max_time": 448.053968012,
+    "time_range_string": "[425, 448]"
+  },
+  "(44950, 443)": {
+    "total_bytes_from_server": 7446,
+    "min_time": 449.682508505,
+    "max_time": 473.912093103,
+    "time_range_string": "[449, 473]"
+  },
+  "(57664, 443)": {
+    "total_bytes_from_server": 124713,
+    "min_time": 475.519468003,
+    "max_time": 498.853416636,
+    "time_range_string": "[475, 498]"
+  },
+  "(57672, 443)": {
+    "total_bytes_from_server": 55119,
+    "min_time": 475.62552114,
+    "max_time": 498.853706397,
+    "time_range_string": "[475, 498]"
+  },
+  "(60274, 443)": {
+    "total_bytes_from_server": 110075,
+    "min_time": 500.4772786,
+    "max_time": 524.841380977,
+    "time_range_string": "[500, 524]"
+  },
+  "(60288, 443)": {
+    "total_bytes_from_server": 55940,
+    "min_time": 500.594018126,
+    "max_time": 524.841624662,
+    "time_range_string": "[500, 524]"
+  },
+  "(56798, 443)": {
+    "total_bytes_from_server": 217446,
+    "min_time": 526.552072577,
+    "max_time": 549.88314064,
+    "time_range_string": "[526, 549]"
+  },
+  "(56808, 443)": {
+    "total_bytes_from_server": 60187,
+    "min_time": 526.639076171,
+    "max_time": 549.882946559,
+    "time_range_string": "[526, 549]"
+  }
+}
