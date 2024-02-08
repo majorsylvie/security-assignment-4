@@ -313,7 +313,75 @@ def perform_and_print_flow_analysis(flows):
     the data analysis wanted per flow.
 
     Specifically this will be:
+        max serverside seq, representing the total number of bytes sent by the server
+        min and max time
+
+    Inputs:
+        flows dictionary from generate_flows_dict()
+
+    Outputs:
+        dictionary storing the desired statistics per flow
+        using stringified keys from the flows dictionary
+        such that the outputted dictionary can be directly
+        serialized to JSON
+        
+        will have fields:
+            total_bytes_from_server : integer of the total bytes sent from the server to ghost on this flow
+            min_time : minimum relative time
+            max_time : maximum relative time
+            time_range_string : stringified representation of the min and max time
+
     """
+    analysis_dict = {}
+    for flow_tuple_key,flow_packet_list in flows:
+        flow_analysis_values_dict = analyze_one_flow(flow_packet_list)
+
+        # stringify key to allow easy JSON serialization
+        flow_key = str(flow_tuple_key)
+
+        analysis_dict[flow_key] = flow_analysis_values_dict
+
+    return analysis_dict
+
+def analyze_one_flow(flow_packet_list):
+    """
+    function to take in the list of slimmed packets for single flow 
+    and output the analysis dictionary to be used 
+    in the larger analysis dictionary in perform_and_print_flow_analysis
+
+    Inputs:
+        flow_packet_list : list of dictionaries, each one representing a single packet in the flow
+
+    Output:
+        dictionary with (key : values):
+            total_bytes_from_server : integer of the total bytes sent from the server to ghost on this flow
+            min_time : minimum relative time
+            max_time : maximum relative time
+            time_range_string : stringified representation of the min and max time
+    """
+    # get total bytes
+    # since we only want the seq numbers from server traffic, I add the if at the end of the generator
+    server_seqs = [packet['seq'] for packet in flow_packet_list if packet['server_sent']]
+    total_bytes_from_server = max(server_seqs)
+
+    # time work
+    times = [packet['time'] for packet in flow_packet_list]
+
+    min_time = min(times)
+    max_time = max(times)
+    time_range_string = "[ " + str(min_time) + " ---> " + str(max_time) + " ]"
+
+    # with parts assembled, make the dictionary!
+    analysis_dict = {
+            "total_bytes_from_server" : total_bytes_from_server,
+            "min_time" : min_time,
+            "max_time" : max_time,
+            "time_range_string" : time_range_string
+            }
+
+    return analysis_dict
+
+
 
 def analyze_ghost(ghost_json_path="ghost2024.json"):
     """
