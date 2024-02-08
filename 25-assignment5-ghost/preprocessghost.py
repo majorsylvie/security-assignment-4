@@ -1,6 +1,6 @@
 from collections import defaultdict
 import json
-from typing import Any, DefaultDict, Dict, List, Tuple
+from typing import Any, DefaultDict, Dict, List, Optional, Tuple
 PAGES = {
         'index': 'index',
         'ghost_start':5235101353139427677,
@@ -115,7 +115,7 @@ def generate_flows_dict(packets):
     #   a boolean for if it was sent by the server
 
     # default dict so I can guarentee append even if this is the first discovered packet 
-    flows: Dict[Optional[Tuple[int,int]],List[Dict[str,int | bool]]] = defaultdict(list)
+    flows: Dict[Optional[Tuple[int,int]],List[Dict[str,int | float | bool]]] = defaultdict(list)
     
     for packet in packets:
         flow_tuple,slimmed_packet_dict = get_flow_for_and_slim_packet(packet)
@@ -123,8 +123,63 @@ def generate_flows_dict(packets):
 
     return flows
 
+def get_flow_for_and_slim_packet(packet,ghost_ip="192.168.1.101",server_ip="128.135.11.239") -> Tuple[Optional[Tuple[int,int]],Dict[str,int | float | bool]]:
+    """
+    Function to take in an individual full packet as an in-memory dict
+    made from the JSON exported directly from some wireshark packet capture
+    and report both the tuple of:
+        (ghost tcp ip, server tcp ip)
 
+    as well as the following per packet:
+        time sent
+        seq value
+        if packet was sent from blase.courses (ip = 128.135.11.239)
+
+    Inputs:
+        packet : dictionary representing a packet
+        ghost_ip : the IP to consider as the ghost's IP
+        server_ip : the IP to consider as the server IP
+
+    both the ghost_ip and server_ip are given default arguments that are specific
+    to the 2024 ghost packet capture, but this code can be generalized
+    to adapt to any ghost and server port since the logic would 
+    remain unchanged.
+
+    Outputs:
+        Tuple of:
+            optional( int tuple ) of (ghost tcp port, server tcp port)
+                to be used as the key in the larger flows dictionary
+
+                optional to gracefully handle if we can't match a packet
+                to a flow
+
+            slimmed packet dictionary containined three fields:
+                'time': relative time as as a float
+                'seq' : sequence number as an integer
+                'server_sent' : boolean of whether the packet was sent by the server
+                                (where server is whatever the inputted server_ip arg is)
+
+    """
+    try:
+        src = packet['_source']
+        layers = src['layers']
+        frame = layers['frame']
+    except KeyError as e:
+        raise KeyError(f"SOMEHOW got a packet with no src/layers/frame, error message: [{e}]");
         
+
+
+    relative_time = frame['frame.time_relative']
+    ip = layers['ip']
+        ip['ip.src']
+        ip['ip.dst']
+
+    tcp = layers['tcp']
+        tcp['tcp.srcport']
+        tcp['tcp.dstport']
+        tcp['tcp.seq']
+        tcp['tcp.ack']
+        tcp['tcp.flags_tree']
 
 
 
@@ -133,3 +188,26 @@ if __name__ == "__main__":
     with open("ghost2024.json", "r") as ghost2024:
         packets = json.load(ghost2024)
         flows_dict =generate_flows_dict(packets)
+
+"""
+JSON field checking:
+
+src = packet['_source']
+
+layers = src['layers']
+
+frame = layers['frame']
+    relative_time = frame['frame.time_relative']
+
+ip = layers['ip']
+    ip['ip.src']
+    ip['ip.dst']
+
+tcp = layers['tcp']
+    tcp['tcp.srcport']
+    tcp['tcp.dstport']
+    tcp['tcp.seq']
+    tcp['tcp.ack']
+    tcp['tcp.flags_tree']
+
+"""
