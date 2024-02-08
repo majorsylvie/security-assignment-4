@@ -1,4 +1,6 @@
+from collections import defaultdict
 import json
+from typing import Any, DefaultDict, Dict, List, Tuple
 PAGES = {
         'index': 'index',
         'ghost_start':5235101353139427677,
@@ -36,32 +38,6 @@ def generate_flows_dict(packets):
 
     """
     OOP as follows:
-        take a single packet:
-
-            src = packet['_source']
-            layers = src['layers']
-            frame = layers['frame']
-
-                relative_time = frame['frame.time_relative']
-
-            ip = layers['ip']
-                
-                ip['ip.src']
-                ip['ip.dst']
-
-            tcp = layers['tcp']
-
-                tcp['tcp.srcport']
-                tcp['tcp.dstport']
-
-                tcp['tcp.seq']
-                tcp['tcp.ack']
-                    potentially flipping in some way??
-
-                tcp['tcp.flags_tree']
-                    captures whether it's a syn, fin, or rst packet
-
-
         # PART 1: FLOW IDENTIFICATION:
 
         we must first figure out what flow to put this packet in before we 
@@ -129,8 +105,19 @@ def generate_flows_dict(packets):
                 and conversely I can also use this to find the max
                 Ack number sent by the client to sanity check 
                 that they are within a few bytes of one another
-
+                    (allowing some tolerance because of RST's)
     """
+    # interiort type of int or bool since it's either:
+    #   an int for time sent and seq value
+    #   a boolean for if it was sent by the server
+    flows: Dict[Tuple[int,int],List[Dict[str,int | bool]]] = defaultdict(list)
+    
+    for packet in packets:
+        flow_tuple,slimmed_packet_dict = get_flow_for_and_slim_packet(packet)
+
+
+
+
 if __name__ == "__main__":
     with open("ghost2024.json", "r") as ghost2024:
         packets = json.load(ghost2024)
