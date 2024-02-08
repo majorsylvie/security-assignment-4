@@ -333,7 +333,7 @@ def perform_and_print_flow_analysis(flows):
 
     """
     analysis_dict = {}
-    for flow_tuple_key,flow_packet_list in flows:
+    for flow_tuple_key,flow_packet_list in flows.items():
         flow_analysis_values_dict = analyze_one_flow(flow_packet_list)
 
         # stringify key to allow easy JSON serialization
@@ -369,7 +369,9 @@ def analyze_one_flow(flow_packet_list):
 
     min_time = min(times)
     max_time = max(times)
-    time_range_string = "[ " + str(min_time) + " ---> " + str(max_time) + " ]"
+
+    # cast to int for cleaner representation in string
+    time_range_string = "[" + str(int(min_time)) + ", " + str(int(max_time)) + "]"
 
     # with parts assembled, make the dictionary!
     analysis_dict = {
@@ -381,8 +383,6 @@ def analyze_one_flow(flow_packet_list):
 
     return analysis_dict
 
-
-
 def analyze_ghost(ghost_json_path="ghost2024.json"):
     """
     function to, from start till finish, analyze the ghost packet capture flows
@@ -392,11 +392,15 @@ def analyze_ghost(ghost_json_path="ghost2024.json"):
         packets = json.load(ghost2024)
         flows_dict =generate_flows_dict(packets)
 
-        perform_and_print_flow_analysis(flows_dict)
+        analysis_dict = perform_and_print_flow_analysis(flows_dict)
 
-    return flows_dict
+    return analysis_dict
 
 if __name__ == "__main__":
-    analyze_ghost()
+    ghost_analysis_dict = analyze_ghost()
+    
+    # ghost_analysis_json = json.dumps(ghost_analysis_dict,indent=2)
+    with open('ghost2024_analysis.json', 'w') as ghost_analysis_json_file:
+        json.dump(ghost_analysis_dict,fp=ghost_analysis_json_file,indent=2)
 
 
