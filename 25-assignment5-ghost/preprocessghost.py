@@ -274,7 +274,13 @@ def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
     if ghost_port is None or server_port is None:
         return None
 
+
     # otherwise, if no errors occurred and we assigned the ghost and server port
+
+    # cast to int
+    ghost_port = int(ghost_port)
+    server_port = int(server_port)
+
     # then successfully return my tuple!
     return (ghost_port,server_port)
 
@@ -301,10 +307,28 @@ tcp = layers['tcp']
 
 """
 
-if __name__ == "__main__":
-    with open("ghost2024.json", "r") as ghost2024:
+def perform_and_print_flow_analysis(flows):
+    """
+    Function take in the prepared flows dictionary and print to stdout 
+    the data analysis wanted per flow.
+
+    Specifically this will be:
+    """
+
+def analyze_ghost(ghost_json_path="ghost2024.json"):
+    """
+    function to, from start till finish, analyze the ghost packet capture flows
+    and return what I want
+    """
+    with open(ghost_json_path, "r") as ghost2024:
         packets = json.load(ghost2024)
         flows_dict =generate_flows_dict(packets)
-        print(flows_dict)
+
+        perform_and_print_flow_analysis(flows_dict)
+
+    return flows_dict
+
+if __name__ == "__main__":
+    analyze_ghost()
 
 
