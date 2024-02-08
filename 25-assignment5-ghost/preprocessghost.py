@@ -167,21 +167,59 @@ def get_flow_for_and_slim_packet(packet,ghost_ip="192.168.1.101",server_ip="128.
     except KeyError as e:
         raise KeyError(f"SOMEHOW got a packet with no src/layers/frame, error message: [{e}]");
         
+    port_tuple = get_flow_port_tuple(ip=ip,tcp=tcp,ghost_ip=ghost_ip,server_ip=server_ip)
+
+    slimmed_packet = slim_packet(frame=frame,ip=ip,tcp=tcp)
+
+    return (port_tuple,slimmed_packet)
+
+def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
+    """
+    Function to take in the ip and tcp information from a packet
+    and generate the tuple of:
+        (ghost tcp port, server tcp port)
+
+    Inputs:
+        ip : ip dictionary for a wireshark packet
+        tcp : tcp dictionary for a wireshark packet
+
+        ghost_ip : ip to consider as the "ghost" 
+        server_ip : ip to consider as the "server"
+
+    Output:
+        optional( int tuple ) of (ghost tcp port, server tcp port)
+    """
+    src_ip = ip['ip.src']
+    dest_ip = ip['ip.dst']
+
+    src_port =  tcp['tcp.srcport']
+    dest_port = tcp['tcp.dstport']
+
+    ghost_port = None
+    server_port = None
+    if src_ip == ghost_ip:
+        ghost_port  = src_port
+        server_port = dest_port
+
+    elif src_ip == server_ip:
+        server_port = src_port
+        ghost_port  = dest_port
+
+    # if we somehow failed to distinguish ports 
+    # then we can't make a tuple of ghost,server, hence return None
+    if ghost_port is None or server_port is None:
+        return None
+
+    # otherwise, if no errors occurred and we assigned the ghost and server port
+    # then successfully return my tuple!
+    return (ghost_port,server_port)
 
 
-    relative_time = frame['frame.time_relative']
-    ip = layers['ip']
-        ip['ip.src']
-        ip['ip.dst']
-
-    tcp = layers['tcp']
-        tcp['tcp.srcport']
-        tcp['tcp.dstport']
-        tcp['tcp.seq']
-        tcp['tcp.ack']
-        tcp['tcp.flags_tree']
 
 
+    tcp['tcp.seq']
+    tcp['tcp.ack']
+    tcp['tcp.flags_tree']
 
 
 if __name__ == "__main__":
