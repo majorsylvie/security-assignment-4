@@ -27,15 +27,9 @@ def make_url(ghost_hash: int)-> str:
 
 
 
-
-def get_selenium_browser():
+def get_selenium_browser_options():
     """
-    function to setup and return the selenium "browser" object
-    as represented in the example
-
-    This is because all we will do is, once the driver is set up, 
-    is .get() and .close() the browser. thus I want to abstract away all
-    other selenium setup to this function
+    function to only return the chrome_options variable from the example code
     """
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--incognito")
@@ -45,14 +39,29 @@ def get_selenium_browser():
     chrome_options.add_argument("--disable-component-extensions-with-background-pages")
     chrome_options.add_argument("--no-default-browser-check")
 
+    return chrome_options
+
+def get_new_selenium_browser(chrome_options):
+    """
+    function to setup and return the selenium "browser" object
+    as represented in the example
+
+    This is because all we will do is, once the driver is set up, 
+    is .get() and .close() the browser. thus I want to abstract away all
+    other selenium setup to this function
+
+    Input:
+        chrome_options : as returned by get_selenium_browser_options()
+    """
+
     service = ChromeService(executable_path=ChromeDriverManager().install())
     # start the actual driver 
     browser = webdriver.Chrome(service=service, options=chrome_options)
 
-    # at this point, my code will visit a link, then close the browser with 
-    # browser.close()
+    return browser
 
-def visit_one_page(browser, hash_number=None):
+
+def visit_one_page(browser, hash_number=None,sleep=True):
     """
     function to visit a single page for a particular browser
 
@@ -79,6 +88,13 @@ def visit_one_page(browser, hash_number=None):
     # we've guarenteed to have an output from make_url
     browser.get(url)
 
+    # controlled sleep
+    if sleep:
+        time.sleep(20)
+
+
+    browser.quit()
+
 # -------------------------------
 
 PAGES = {
@@ -88,4 +104,20 @@ PAGES = {
         }
 
 if __name__ == "__main__":
-    print(make_url(PAGES[5235101353139427677][0]))
+
+    hash_number = PAGES['ghost_start']
+
+    chrome_options = get_selenium_browser_options()
+    browser = get_new_selenium_browser(chrome_options)
+
+    visit_one_page(browser=browser,sleep=True)
+
+    browser = get_new_selenium_browser(chrome_options)
+
+    visit_one_page(browser=browser,hash_number=hash_number)
+
+
+
+    browser.quit()
+
+
