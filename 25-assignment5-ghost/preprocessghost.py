@@ -274,6 +274,8 @@ if __name__ == "__main__":
         packets = json.load(ghost2024)
         flows_dict =generate_flows_dict(packets)
 
+        print(flows_dict.keys())
+
 """
 JSON field checking:
 
