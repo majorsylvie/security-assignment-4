@@ -107,13 +107,24 @@ def generate_flows_dict(packets):
                 that they are within a few bytes of one another
                     (allowing some tolerance because of RST's)
     """
-    # interiort type of int or bool since it's either:
+    # optional typing for the key incase the get_flow_for_and_slim_packet 
+    # helper function (somehow) can't identify a packets flow
+
+    # interior type of packet dictionary is int or bool as it's either:
     #   an int for time sent and seq value
     #   a boolean for if it was sent by the server
-    flows: Dict[Tuple[int,int],List[Dict[str,int | bool]]] = defaultdict(list)
+
+    # default dict so I can guarentee append even if this is the first discovered packet 
+    flows: Dict[Optional[Tuple[int,int]],List[Dict[str,int | bool]]] = defaultdict(list)
     
     for packet in packets:
         flow_tuple,slimmed_packet_dict = get_flow_for_and_slim_packet(packet)
+        flows[flow_tuple].append(slimmed_packet_dict)
+
+    return flows
+
+
+        
 
 
 
