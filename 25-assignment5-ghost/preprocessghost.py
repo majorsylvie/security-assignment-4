@@ -166,12 +166,67 @@ def get_flow_for_and_slim_packet(packet,ghost_ip="192.168.1.101",server_ip="128.
         frame = layers['frame']
     except KeyError as e:
         raise KeyError(f"SOMEHOW got a packet with no src/layers/frame, error message: [{e}]");
+
+    ip  = layers['ip']
+    tcp = layers['tcp']
         
     port_tuple = get_flow_port_tuple(ip=ip,tcp=tcp,ghost_ip=ghost_ip,server_ip=server_ip)
 
-    slimmed_packet = slim_packet(frame=frame,ip=ip,tcp=tcp)
+    slimmed_packet = slim_packet(frame=frame,ip=ip,tcp=tcp,ghost_ip=ghost_ip,server_ip=server_ip)
 
     return (port_tuple,slimmed_packet)
+
+
+
+def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]]:
+    """
+    Function to take in the frame, ip, and tcp layers of a packet 
+    and return a dictionary of the slimmed representation. 
+
+    Inputs:
+        frame, ip, tcp : all dictionaries extracted representing identically named layers
+                         inside a wireshark packet json
+
+        ghost_ip : ip to consider as the "ghost" 
+        server_ip : ip to consider as the "server"
+            used for determining whether the packet was sent by the server
+
+    Outputs:
+        slimmed packet dictionary containined three fields:
+            'time': relative time as as a float
+            'seq' : sequence number as an integer
+            'server_sent' : boolean of whether the packet was sent by the server
+                            (where server is whatever the inputted server_ip arg is)
+    """
+
+    # conversion to float as all fields in exported json are strings
+    relative_time = float(frame['frame.time_relative'])
+
+    seq_number = int(tcp['tcp.seq'])
+
+    # now determine if packet was sent by the server
+    sent_by_server = None
+    source_ip = ip['ip.src']
+
+    if source_ip == server_ip:
+        sent_by_server = True
+
+    elif source_ip == ghost_ip:
+        sent_by_server = False
+
+    if sent_by_server is None:
+        raise ValueError(f"got packet that was sent from neither ghost nor server ip, instead had ip: [{source_ip}]")
+
+
+    # after assumbling all components of the slimmed packet,
+    # let's make the dang dictionary
+    slimmed_packet = {
+            'time' : relative_time,
+            'seq'  : seq_number,
+            'server_sent' : sent_by_server
+            }
+
+    return slimmed_packet
 
 def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
     """
@@ -189,20 +244,20 @@ def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
     Output:
         optional( int tuple ) of (ghost tcp port, server tcp port)
     """
-    src_ip = ip['ip.src']
+    source_ip = ip['ip.src']
     dest_ip = ip['ip.dst']
 
-    src_port =  tcp['tcp.srcport']
+    source_port =  tcp['tcp.srcport']
     dest_port = tcp['tcp.dstport']
 
     ghost_port = None
     server_port = None
-    if src_ip == ghost_ip:
-        ghost_port  = src_port
+    if source_ip == ghost_ip:
+        ghost_port  = source_port
         server_port = dest_port
 
-    elif src_ip == server_ip:
-        server_port = src_port
+    elif source_ip == server_ip:
+        server_port = source_port
         ghost_port  = dest_port
 
     # if we somehow failed to distinguish ports 
