@@ -24,6 +24,27 @@ Thus, steps will be:
 """
 
 
+BC = "https://blase.courses/"
+def make_url(ghost_hash: int = None)-> str:
+    """
+    function to take in just a number from the HTML path in blase.courses
+    and output a full URL string that can be fed directly to
+    browser.get()
+
+    Expects the integer representation of the HTML path:
+        eg:
+            starting page https://blase.courses/5235101353139427677.html
+            is inputted as ghost_hash = 5235101353139427677
+
+        if it get's none, will return the index's URL
+    """
+    if ghost_hash is None:
+        return BC
+
+    url_string = BC + str(ghost_hash) + ".html"
+    return url_string
+
+
 
 def test_one_webpage(url='https://blase.courses/')-> List[int]:
     """
@@ -47,5 +68,58 @@ def test_one_webpage(url='https://blase.courses/')-> List[int]:
         path = path.split(".")[0]
         print(path)
 
+def get_neighbors_from_hash_value(hash=None):
+    """
+    function to take in an individual hash value, and using requests and beautiful soup,
+    return the list of all the hash values that are linked on it
+
+    Inputs:
+        hash: and integer hash value representing the path of the webpage
+              if no hash is provided, this will get the href for the index
+
+    Output:
+        list of hash values as integers
+    """
+
+    output_list = []
+
+    url = make_url(ghost_hash=hash)
+
+    # url = "https://blase.courses/9120766452599220771.html"
+    html = requests.get(str(url))
+
+    # beautiful soup need the text of the webpage so it can
+    # scrape anything
+    soup = BeautifulSoup(html.text, "lxml")
+
+    # this gets all the href'd <a> elements from the webpage
+    links = soup.find_all('a', href=True)
+    # print(links)
+    for link in links:
+        # the "link" variable will be the whole html tag
+        # we only want to href key value pair, so we extract it
+        href = link['href']
+
+        # now we only want the actual path of the
+        # https://blase.courses/[hash_value].html
+        # url, so we use urlparse to direct grab it
+        # the path here will be of the form:
+        #   "/[hash_value].html"
+        path = urlparse(href).path
+
+        # i just want the hash_value, get rid of slash and html
+        path = path.replace("/","")
+
+        # splitting on the . in .html
+        path = path.split(".")[0]
+        # print(path)
+
+        path_value = int(path)
+        output_list.append(path_value)
+
+    return output_list
+
+
 if __name__ == "__main__":
-    test_one_webpage()
+    n= get_neighbors_from_hash_value(hash=9120766452599220771)
+    print(n)
