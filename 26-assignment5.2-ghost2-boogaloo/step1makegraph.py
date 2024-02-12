@@ -240,15 +240,10 @@ def traverse_and_save_json(depth_limit=22):
 
     return filepath
 
-
-sdfp -x overlap - scale
-sfdp -x -Goverlap=scale -Tsvg dotfile > yoursvghere.svg
-
 if __name__ == "__main__":
-    json_filepath = traverse_and_save_json(depth_limit=23)
-    make_digraph_from_json(json_filepath)
-    json_filepath = traverse_and_save_json(depth_limit=24)
-    make_digraph_from_json(json_filepath)
     json_filepath = traverse_and_save_json(depth_limit=22)
-    make_digraph_from_json(json_filepath)
+    # json_filepath = '22_depth_traversal.json'
+    G = make_digraph_from_json(json_filepath)
+    path = '22_depth_graph_dotfile.dot'
+    nx.drawing.nx_pydot.write_dot(G,path)
     # make_digraph_from_json('22_depth_traversal.json')
