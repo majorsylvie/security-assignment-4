@@ -204,7 +204,7 @@ def get_hash_value_from_dns_layer(dns) -> int | None:
             key = key.replace("hash-value-",'').split(".zzyyzzxx")[0]
 
             if key == "indexindexindex":
-                key = None
+                key = 0
             else:
                 key = int(key)
 
