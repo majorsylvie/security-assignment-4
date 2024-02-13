@@ -1,9 +1,14 @@
 from collections import defaultdict
 import json
 from typing import Any, DefaultDict, Dict, List, Optional, Tuple
-JSON_FILEPATH = '22_depth_packet_capture_attempt_2_feb12th_730pm.json'
-ANALYSIS_OUTPUT_FILEPATH = 'step2_22_depth_packet_capture_attempt_2_analysis.json'
-MY_IP='192.168.0.7'
+JSON_FILEPATH = "22_depth_packet_capture_attempt_2_feb12th_730pm.json"
+# JSON_FILEPATH = "22_depth_packet_capture_attempt_2_feb12th_730pm.json"
+# JSON_FILEPATH = "small.json"
+HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON = '22_hash_value_to_flows_middle_analysis.json'
+
+# ANALYSIS_OUTPUT_FILEPATH = 'step2_22_depth_packet_capture_attempt_2_analysis.json'
+# ANALYSIS_OUTPUT_FILEPATH = 'middle_analysis.json'
+MY_IP='192.168.0.107'
 BLASE_IP='128.135.11.239'
 PAGES = {
         'index': 'index',
@@ -74,6 +79,7 @@ def generate_flows_dict(packets,my_ip,server_ip):
                     }
 
     """
+    # print(f"top of generate flows dict")
     # optional typing for the key incase the get_flow_for_and_slim_packet 
     # helper function (somehow) can't identify a packets flow
 
@@ -82,8 +88,6 @@ def generate_flows_dict(packets,my_ip,server_ip):
     #   a boolean for if it was sent by the server
     output_page_to_flows_mapping = defaultdict(dict)
 
-    # default dict so I can guarentee append even if this is the first discovered packet 
-    flows: Dict[Optional[Tuple[int,int]],List[Dict[str,int | float | bool]]] = defaultdict(list)
 
     # string keys typing for testing, explanatory comment in for loop
     # flows: Dict[str,List[Dict[str,int | float | bool]]] = defaultdict(list)
@@ -92,29 +96,71 @@ def generate_flows_dict(packets,my_ip,server_ip):
     # will be updated whenever we reach a new malformed DNS query
     # starting as None since we haven't begun iteration
     curr_page_hash_value = None
+
+    # will get grows as we encounter more packets
+    # variable to keep track of the flows for the current page
+    # then get associated with the curr_page_hash_value  in output_page_to_flows_mapping
+    # when we find a new hash value
+    curr_flows = defaultdict(list)
+
     for packet in packets:
         src = packet['_source']
         layers = src['layers']
 
         # first check if this is a DNS packet
         dns = layers.get('dns')
+        # print(f"packet: {layers.keys()}")
         if dns is not None:
+            print(f"DNS")
             # then this is a DNS packet, wooo!!!
             hash_value = get_hash_value_from_dns_layer(dns)
 
+            if hash_value is not None and hash_value not in output_page_to_flows_mapping:
+                # this means we are at the beggining of a new flow! 
+                # since if the hash value was already in the output_page_to_flows_mapping 
+                # then we've already found a DNS request for this hash_value
+                # which would make sense since both A and AAAA records 
+                # were being sent for the zzyyzzxx domains, so there could easily be 2 dns requests per hash
 
-        flow_tuple,slimmed_packet_dict = get_flow_for_and_slim_packet(packet,ghost_ip=my_ip,server_ip=server_ip)
-        flows[flow_tuple].append(slimmed_packet_dict)
+                # if this has happened, then I want to make sure that the flows dictionary
+                # that has been previously built up get stored in the output dictionary
+                # before we start making new flows for the new webpage
+                if curr_page_hash_value is None:
+                    curr_page_hash_value = hash_value
+                elif curr_page_hash_value is not None:
+                    # checking to make sure we have something to record
+                    # print(f"saving current flows: {curr_flows}");
+                    # print(f"saving: curr flows: {json.dumps(curr_flows,indent=2)}")
+                    if curr_flows:
+                        print(f"saving curr flows")
+                        output_page_to_flows_mapping[curr_page_hash_value] = curr_flows
 
+                    # now update current page
+                    curr_page_hash_value = hash_value
+
+                    # reset the current flows since we've moved on to a new page
+                    curr_flows = defaultdict(list)
+
+        else:
+            print(f"NON DNS: {curr_page_hash_value}")
+            # print(f"{curr_page_hash_value}")
+            # then we're dealing with a non DNS packet
+            # time to flow B)
+            flow_tuple,slimmed_packet_dict = get_flow_for_and_slim_packet(packet,my_ip=my_ip,server_ip=server_ip)
+            flow_tuple = str(flow_tuple)
+            curr_flows[flow_tuple].append(slimmed_packet_dict)
+
+        
         # alternate key's-as-strings for serializing the JSON and saving in a file
         # to validate that my code behaves as I want in final submission 
         # this flows dict will be disposed of where all I care about is the final data analysis.
         # string_flow_tuple = str(flow_tuple)
         # flows[string_flow_tuple].append(slimmed_packet_dict)
 
-    return flows
+    
+    return output_page_to_flows_mapping
 
-def get_hash_value_from_dns_layer(dns) -> int:
+def get_hash_value_from_dns_layer(dns) -> int | None:
     """
     function to take in the DNS layer of a DNS request packet 
     and return the hash value if it was a DNS request of the format:
@@ -141,7 +187,11 @@ def get_hash_value_from_dns_layer(dns) -> int:
       'dns.qry.type': '28',
       'dns.qry.class': '0x0001'}}
     """
+
+    output_hash_value = None
+
     queries = dns['Queries']
+    # print(f"{queries}")
     for key in queries:
         if "zzyyzzxx" in key:
             # then I know this is for sure a DNS request made by me
@@ -153,14 +203,20 @@ def get_hash_value_from_dns_layer(dns) -> int:
             # and take the first results after splitting the string on the zzyyzzxx
             key = key.replace("hash-value-",'').split(".zzyyzzxx")[0]
 
-            # cast to int because I want to 
-            key = int(key)
+            if key == "indexindexindex":
+                key = None
+            else:
+                key = int(key)
 
-    # convert hash value to integer
+            output_hash_value = key
+        else:
+            pass
+            # print(f"failed to find")
 
     # win many victories
+    return output_hash_value
 
-def get_flow_for_and_slim_packet(packet,ghost_ip,server_ip) -> Tuple[Optional[Tuple[int,int]],Dict[str,int | float | bool]]:
+def get_flow_for_and_slim_packet(packet,my_ip,server_ip) -> Tuple[Optional[Tuple[int,int]],Dict[str,int | float | bool]]:
     """
     Function to take in an individual full packet as an in-memory dict
     made from the JSON exported directly from some wireshark packet capture
@@ -174,13 +230,8 @@ def get_flow_for_and_slim_packet(packet,ghost_ip,server_ip) -> Tuple[Optional[Tu
 
     Inputs:
         packet : dictionary representing a packet
-        ghost_ip : the IP to consider as the ghost's IP
+        my_ip : the IP to consider as my's IP
         server_ip : the IP to consider as the server IP
-
-    both the ghost_ip and server_ip are given default arguments that are specific
-    to the 2024 ghost packet capture, but this code can be generalized
-    to adapt to any ghost and server port since the logic would 
-    remain unchanged.
 
     Outputs:
         Tuple of:
@@ -207,15 +258,15 @@ def get_flow_for_and_slim_packet(packet,ghost_ip,server_ip) -> Tuple[Optional[Tu
     ip  = layers['ip']
     tcp = layers['tcp']
         
-    port_tuple = get_flow_port_tuple(ip=ip,tcp=tcp,ghost_ip=ghost_ip,server_ip=server_ip)
+    port_tuple = get_flow_port_tuple(ip=ip,tcp=tcp,my_ip=my_ip,server_ip=server_ip)
 
-    slimmed_packet = slim_packet(frame=frame,ip=ip,tcp=tcp,ghost_ip=ghost_ip,server_ip=server_ip)
+    slimmed_packet = slim_packet(ip=ip,tcp=tcp,my_ip=my_ip,server_ip=server_ip)
 
     return (port_tuple,slimmed_packet)
 
 
 
-def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]:
+def slim_packet(ip,tcp,my_ip,server_ip) -> Dict[str,int | float | bool]:
     """
     Function to take in the frame, ip, and tcp layers of a packet 
     and return a dictionary of the slimmed representation. 
@@ -230,14 +281,11 @@ def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]
 
     Outputs:
         slimmed packet dictionary containined three fields:
-            'time': relative time as as a float
             'seq' : sequence number as an integer
             'server_sent' : boolean of whether the packet was sent by the server
                             (where server is whatever the inputted server_ip arg is)
     """
 
-    # conversion to float as all fields in exported json are strings
-    relative_time = float(frame['frame.time_relative'])
 
     seq_number = int(tcp['tcp.seq'])
 
@@ -245,10 +293,10 @@ def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]
     sent_by_server = None
     source_ip = ip['ip.src']
 
-    if source_ip == server_ip:
+    if source_ip == BLASE_IP:
         sent_by_server = True
 
-    elif source_ip == ghost_ip:
+    elif source_ip == MY_IP:
         sent_by_server = False
 
     if sent_by_server is None:
@@ -258,14 +306,13 @@ def slim_packet(frame,ip,tcp,ghost_ip,server_ip) -> Dict[str,int | float | bool]
     # after assumbling all components of the slimmed packet,
     # let's make the dang dictionary
     slimmed_packet = {
-            'time' : relative_time,
             'seq'  : seq_number,
             'server_sent' : sent_by_server
             }
 
     return slimmed_packet
 
-def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
+def get_flow_port_tuple(ip,tcp,my_ip,server_ip) -> Optional[Tuple[int,int]]:
     """
     Function to take in the ip and tcp information from a packet
     and generate the tuple of:
@@ -289,7 +336,7 @@ def get_flow_port_tuple(ip,tcp,ghost_ip,server_ip) -> Optional[Tuple[int,int]]:
 
     ghost_port = None
     server_port = None
-    if source_ip == ghost_ip:
+    if source_ip == my_ip:
         ghost_port  = source_port
         server_port = dest_port
 
@@ -419,7 +466,9 @@ def analyze_pcap(pcap_json_path="ghost2024.json",
     """
     with open(pcap_json_path, "r") as pcap_json:
         packets = json.load(pcap_json)
-        flows_dict =generate_flows_dict(packets,my_ip=my_ip,server_ip=server_ip)
+        flows_dict =generate_flows_dict(packets=packets,my_ip=my_ip,server_ip=server_ip)
+
+        return flows_dict
 
         analysis_dict = perform_and_print_flow_analysis(flows_dict)
 
@@ -537,9 +586,13 @@ same DNS layers
 """
 
 if __name__ == "__main__":
+    print(f"starting")
     page_analysis_dict = analyze_pcap(JSON_FILEPATH)
     
-    # ghost_analysis_json = json.dumps(ghost_analysis_dict,indent=2)
-    with open(ANALYSIS_OUTPUT_FILEPATH, 'w') as ghost_analysis_json_file:
-        json.dump(page_analysis_dict,fp=ghost_analysis_json_file,indent=2)
+    # print(json.dumps(page_analysis_dict,indent=2))
+    # page_analysis_dict = json.dumps(ghost_analysis_dict,indent=2)
+    
+    with open(HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON, 'w') as ghost_analysis_json_file:
+        print(f"saving to {HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON}")
 
+        json.dump(page_analysis_dict,fp=ghost_analysis_json_file,indent=2)
