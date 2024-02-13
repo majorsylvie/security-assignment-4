@@ -109,7 +109,7 @@ def make_dns_flag_url(hash_number):
     function to make a malicious malformed url for the DNS flag planting strategy.
     Will be of format:
 
-        hash-value-{hash_number}.edu
+        hash-value-{hash_number}.zzyyzzxx
 
     Inputs:
         hash_number : optional integer, None meaning index
@@ -123,7 +123,7 @@ def make_dns_flag_url(hash_number):
         # having fun with urls :)
         hash_string = "indexindexindex"
 
-    url = "http://hash-value-" + hash_string + ".edu"
+    url = "http://hash-value-" + hash_string + ".zzyyzzxx"
     return url
 
 def plant_dns_flag(browser,hash_number):
@@ -131,7 +131,7 @@ def plant_dns_flag(browser,hash_number):
     function to take in a hash number and make a malformed DNS A record request
     to:
 
-        hash-value-{hash_number}.edu
+        hash-value-{hash_number}.zzyyzzxx
     
     This will be used to easily tell me when each new website is being visited
 
@@ -140,7 +140,7 @@ def plant_dns_flag(browser,hash_number):
     Thus, by placing these DNS requests, when parsing the packet capture from wireshark, all I have to do is parse packets until I find a DNS 
     query, then see if its of the form 
 
-        hash-value-{hash_number}.edu
+        hash-value-{hash_number}.zzyyzzxx
 
     and immediately after the next packets sent between my IP and 128.135.11.239 will be for sure the next flow!
 
