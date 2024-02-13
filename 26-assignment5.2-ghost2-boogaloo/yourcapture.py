@@ -13,7 +13,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 BC = 'https://blase.courses/'
-SLEEP_DURATION_IN_SECONDS = 20
+SLEEP_DURATION_IN_SECONDS = 10
+DNS_TIMEOUT_DURATION_IN_SECONDS = 0.1
+PAGES = {
+        'index': 'index',
+        'ghost_start':5235101353139427677,
+        5235101353139427677: [ 802362620749745974, 6845881726168158209, 1541437922809678587],
+        }
 
 def make_url(ghost_hash: int)-> str:
     """
@@ -65,7 +71,7 @@ def get_new_selenium_browser(chrome_options):
     return browser
 
 
-def visit_one_page(browser, hash_number=None,sleep=True):
+def visit_one_page(browser, hash_number=None):
     """
     function to visit a single page for a particular browser
 
@@ -94,10 +100,6 @@ def visit_one_page(browser, hash_number=None,sleep=True):
     # url must be well constructed now as 
     # we've guarenteed to have an output from make_url
     browser.get(url)
-
-    # controlled sleep
-    if sleep:
-        time.sleep(SLEEP_DURATION_IN_SECONDS)
 
     browser.quit()
 
@@ -149,24 +151,23 @@ def plant_dns_flag(browser,hash_number):
     Outputs:
         none, should just do browser.get()
     """
-
-
-# -------------------------------
-
-PAGES = {
-        'index': 'index',
-        'ghost_start':5235101353139427677,
-        5235101353139427677: [ 802362620749745974, 6845881726168158209, 1541437922809678587],
-        }
+    url = make_dns_flag_url(hash_number)
+    
+    # make timeout really short since we literally do not at all care about getting an actual response
+    browser.set_page_load_timeout(DNS_TIMEOUT_DURATION_IN_SECONDS)
+    try:
+        browser.get(url)
+    except Exception as e:
+        print(f"selenium probably timed out: {e}")
+    browser.set_page_load_timeout(SLEEP_DURATION_IN_SECONDS)
 
 def visit_all_nodes_in_json(json_filepath='22_depth_traversal.json'):
     """
     helper function to do all the visiting, 
-    starting at the index, 
-    then the ghost's starting page (5235...)
-    then each of the linked pages on 5235 in printed order
+    based on the nodes in a json file that captures all possible nodes 
+    in a 22-depth traversal of blase.courses
 
-    waiting 20 seconds between each, closing the browser like ghost does each time
+    waiting SLEEP_DURATION_IN_SECONDS seconds between each, closing the browser like ghost does each time
 
     thus I can run wireshark while just running this function and get a sample of all the pages! 
     woooo
