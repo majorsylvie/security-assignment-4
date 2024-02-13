@@ -21,6 +21,28 @@ PAGES = {
         5235101353139427677: [ 802362620749745974, 6845881726168158209, 1541437922809678587],
         }
 
+"""
+    Wireshark Capture Filter:
+
+        port 53 or (host 192.168.0.107 and host 128.135.11.239)
+
+    fake website will cause the DNS resolver to try and A record the nameserver, 
+    so the $ just looks for requests that END with the mysite.com
+
+
+
+    Filtering for my DNS flags only:
+
+        dns.flags.response == 0 and (dns.qry.type == "A" or dns.qry.type == "AAAA") and dns.qry.name matches "hash-value-.*.edu"
+
+
+
+    Overall filter for only the packets between me and blase, as well as my DNS flags:
+
+        ip.addr == 192.168.0.107 and ip.addr == 128.135.11.239 or (dns.flags.response == 0 and (dns.qry.type == "A" or dns.qry.type == "AAAA") and dns.qry.name matches "hash-value-.*.zzyyzzxx$")
+    
+"""
+
 def make_url(ghost_hash: int)-> str:
     """
     function to take in just a number from the HTML path in blase.courses
