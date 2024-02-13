@@ -69,6 +69,8 @@ def visit_one_page(browser, hash_number=None,sleep=True):
     """
     function to visit a single page for a particular browser
 
+    Will also add issue a DNS request as a flag to mark right before visiting a page
+
     Inputs:
         hash_number: numeric representation of the html page, 
                      using the syntax of needed in make_url
@@ -88,6 +90,7 @@ def visit_one_page(browser, hash_number=None,sleep=True):
     if url is None:
         raise ValueError(f'somehow still had an empty URL after everything in visit_one_page with hash_number: {hash_number}')
 
+    plant_dns_flag(browser=browser,hash_number=hash_number)
     # url must be well constructed now as 
     # we've guarenteed to have an output from make_url
     browser.get(url)
@@ -96,8 +99,57 @@ def visit_one_page(browser, hash_number=None,sleep=True):
     if sleep:
         time.sleep(SLEEP_DURATION_IN_SECONDS)
 
-
     browser.quit()
+
+
+def make_dns_flag_url(hash_number):
+    """
+    function to make a malicious malformed url for the DNS flag planting strategy.
+    Will be of format:
+
+        hash-value-{hash_number}.edu
+
+    Inputs:
+        hash_number : optional integer, None meaning index
+
+    Output:
+        string for the url
+    """
+    if hash_number is not None:
+        hash_string = str(hash_number)
+    else:
+        # having fun with urls :)
+        hash_string = "indexindexindex"
+
+    url = "http://hash-value-" + hash_string + ".edu"
+    return url
+
+def plant_dns_flag(browser,hash_number):
+    """
+    function to take in a hash number and make a malformed DNS A record request
+    to:
+
+        hash-value-{hash_number}.edu
+    
+    This will be used to easily tell me when each new website is being visited
+
+    Because selenium is run in series, there are never multiple requests
+    Specifically, selenium's browser.get() will not return until the entire contents of the page finish loading
+    Thus, by placing these DNS requests, when parsing the packet capture from wireshark, all I have to do is parse packets until I find a DNS 
+    query, then see if its of the form 
+
+        hash-value-{hash_number}.edu
+
+    and immediately after the next packets sent between my IP and 128.135.11.239 will be for sure the next flow!
+
+    Inputs:
+        browser : selenium browser instance, hopefully generated from get_new_selenium_browser()
+        hash_number : optional integer for the hash number, None means we're visiting the index
+
+    Outputs:
+        none, should just do browser.get()
+    """
+
 
 # -------------------------------
 
@@ -167,6 +219,7 @@ def make_new_browser_and_visit_page(chrome_options,hash_number=None):
     and visit the page indicated by the hash number.
 
     If the hash number is None, then visit-one_page will visit the index
+
 
     Inputs:
         chrome_options: the same chrome_options to be used for all visits
