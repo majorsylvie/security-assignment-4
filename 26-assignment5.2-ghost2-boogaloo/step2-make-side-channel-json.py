@@ -6,7 +6,7 @@ JSON_FILEPATH = "22_depth_packet_capture_attempt_2_feb12th_730pm.json"
 # JSON_FILEPATH = "small.json"
 HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON = '22_hash_value_to_flows_middle_analysis.json'
 
-# ANALYSIS_OUTPUT_FILEPATH = 'step2_22_depth_packet_capture_attempt_2_analysis.json'
+ANALYSIS_OUTPUT_FILEPATH = 'step2_22_depth_packet_capture_attempt_2_analysis.json'
 # ANALYSIS_OUTPUT_FILEPATH = 'middle_analysis.json'
 MY_IP='192.168.0.107'
 BLASE_IP='128.135.11.239'
@@ -157,6 +157,7 @@ def generate_flows_dict(packets,my_ip,server_ip):
         # string_flow_tuple = str(flow_tuple)
         # flows[string_flow_tuple].append(slimmed_packet_dict)
 
+    output_page_to_flows_mapping[curr_page_hash_value] = curr_flows
     
     return output_page_to_flows_mapping
 
@@ -409,13 +410,14 @@ def perform_and_print_flow_analysis(flows):
     """
     analysis_dict = {}
     for flow_tuple_key,flow_packet_list in flows.items():
-        flow_analysis_values_dict = analyze_one_flow(flow_packet_list)
+        total_flow_bytes = analyze_one_flow(flow_packet_list)
 
         # stringify key to allow easy JSON serialization
         flow_key = str(flow_tuple_key)
 
-        analysis_dict[flow_key] = flow_analysis_values_dict
+        analysis_dict[flow_key] = total_flow_bytes
 
+    # return flow_analysis_values_dict
     return analysis_dict
 
 def analyze_one_flow(flow_packet_list):
@@ -428,35 +430,14 @@ def analyze_one_flow(flow_packet_list):
         flow_packet_list : list of dictionaries, each one representing a single packet in the flow
 
     Output:
-        dictionary with (key : values):
-            total_bytes_from_server : integer of the total bytes sent from the server to ghost on this flow
-            min_time : minimum relative time
-            max_time : maximum relative time
-            time_range_string : stringified representation of the min and max time
+        total_bytes_from_server : integer of the total bytes sent from the server to ghost on this flow
     """
     # get total bytes
     # since we only want the seq numbers from server traffic, I add the if at the end of the generator
     server_seqs = [packet['seq'] for packet in flow_packet_list if packet['server_sent']]
     total_bytes_from_server = max(server_seqs)
+    return total_bytes_from_server
 
-    # time work
-    times = [packet['time'] for packet in flow_packet_list]
-
-    min_time = min(times)
-    max_time = max(times)
-
-    # cast to int for cleaner representation in string
-    time_range_string = "[" + str(int(min_time)) + ", " + str(int(max_time)) + "]"
-
-    # with parts assembled, make the dictionary!
-    analysis_dict = {
-            "total_bytes_from_server" : total_bytes_from_server,
-            "min_time" : min_time,
-            "max_time" : max_time,
-            "time_range_string" : time_range_string
-            }
-
-    return analysis_dict
 
 def analyze_pcap(pcap_json_path="ghost2024.json",
                   my_ip=MY_IP,server_ip=BLASE_IP):
@@ -585,6 +566,51 @@ same DNS layers
 }
 """
 
+def get_final_analysis_from_slimmed_flows(middle_analysis_json_path):
+    """
+    function to take in the middle analysis, which will have:
+        page:
+            list of flows:
+                each flow containing all the packets
+                and if they were sent from the server
+
+
+    Into a dictionary (and serialized into json) with format:
+
+        page:
+            total bytes sent from server
+            list of:
+                flow : server bytes in flow
+    """
+    with open(middle_analysis_json_path, "r") as middle_analysis_json:
+        page_dict = json.load(middle_analysis_json)
+
+        pages = {}
+        for page,flow_list in page_dict.items():
+            # dictionary to store total information for the page
+            page_details_dict = {}
+
+            # dictionary mapping flow to total number of bytes
+            flow_list_analysis_dict = perform_and_print_flow_analysis(flow_list)
+
+            page_total_bytes = 0
+            page_total_flows = 0
+            for flow,total_bytes in flow_list_analysis_dict.items():
+                page_total_flows += 1
+                page_total_bytes += total_bytes
+            
+            page_details_dict['total bytes'] = page_total_bytes
+            page_details_dict['total flows'] = page_total_flows
+            page_details_dict['flows'] = flow_list_analysis_dict
+            pages[page] = page_details_dict
+
+
+    with open(ANALYSIS_OUTPUT_FILEPATH, 'w') as analysis_file:
+        print(f"saving to {ANALYSIS_OUTPUT_FILEPATH}")
+
+        json.dump(pages,fp=analysis_file,indent=2)
+
+
 if __name__ == "__main__":
     print(f"starting")
     page_analysis_dict = analyze_pcap(JSON_FILEPATH)
@@ -596,3 +622,6 @@ if __name__ == "__main__":
         print(f"saving to {HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON}")
 
         json.dump(page_analysis_dict,fp=ghost_analysis_json_file,indent=2)
+
+
+    get_final_analysis_from_slimmed_flows(HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON)
