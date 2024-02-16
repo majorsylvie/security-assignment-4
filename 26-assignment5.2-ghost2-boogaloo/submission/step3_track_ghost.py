@@ -55,7 +55,8 @@ class PathWithError():
 
     @property
     def head(self):
-        return self.hash_value_path[-1]
+        # graph expects hash_values as strings
+        return str(self.hash_value_path[-1])
 
     @property
     def path(self):
@@ -81,6 +82,13 @@ class PathWithError():
 
         return PathWithError(path=new_path,errors=new_path_errors,max_length=max_length)
 
+    @ property
+    def empty(self):
+        if self.path and self.percent_error_at_each_step:
+            return False
+        else:
+            return True
+
         
 
     @property
@@ -98,6 +106,14 @@ class PathWithError():
 
         return path_done
 
+    @property
+    def step(self) -> int:
+        """
+        function to return which step of the path we're on
+        used to index into the ghost list
+        """
+        # -1 since 1 node means index 0
+        return self.path_len - 1
 
 # def copy_and_extend_path(source_path: PathWithError) -> PathWithError:
 #     pass
@@ -126,12 +142,19 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
 
     all_paths: List[PathWithError] = []
 
+    # string 'null' used to access the index node
+    # 0 error since all paths go through index
+    starting_path = PathWithError(path=['null'],errors=[0])
+
     def backtrack(candidate_path: PathWithError):
         if candidate_path.done:
             copied_path = candidate_path.copy()
             all_paths.append(copied_path)
             return
         
+        curr_node = candidate_path.head
+        neighbors = g.neighbors(curr_node)
+
         # iterate all possible candidates.
         for next_candidate in list_of_candidates:
             if is_valid(next_candidate):
@@ -142,22 +165,8 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
                 # backtrack
                 remove(next_candidate)
 
-    """
-    this will be a list of:
-    Tuple (
-            Tuple
-                ( 
-                 path steps as list of integers (all starting with None for the index)
-                 ,
-                 percent error in total bytes sent from server at each step
-                 as list of integers)
-                )
-            ,
-            cumulative error
-            )
-    """
-    all_paths_with_error: List[Tuple[Tuple[List[int | None],List[int]],int]] = []
 
+    backtrack(starting_path)
 
     return asef
 
