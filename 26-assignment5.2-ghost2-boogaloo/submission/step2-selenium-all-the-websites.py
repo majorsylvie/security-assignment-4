@@ -39,6 +39,7 @@ PAGES = {
 
     Overall filter for only the packets between me and blase, as well as my DNS flags:
 
+        port 53 or (host 192.168.0.107 and host 128.135.11.239)
         ip.addr == 192.168.0.107 and ip.addr == 128.135.11.239 or (dns.flags.response == 0 and (dns.qry.type == "A" or dns.qry.type == "AAAA") and dns.qry.name matches "hash-value-.*.zzyyzzxx$")
     
 """
@@ -122,7 +123,10 @@ def visit_one_page(browser, hash_number=None):
     plant_dns_flag(browser=browser,hash_number=hash_number)
     # url must be well constructed now as 
     # we've guarenteed to have an output from make_url
-    browser.get(url)
+    try:
+        browser.get(url)
+    except Exception as e:
+        print(f"L plus error: {e}")
 
     browser.quit()
 

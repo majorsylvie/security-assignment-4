@@ -1,12 +1,12 @@
 from collections import defaultdict
 import json
 from typing import Any, DefaultDict, Dict, List, Optional, Tuple
-JSON_FILEPATH = "22_depth_packet_capture_attempt_2_feb12th_730pm.json"
+JSON_FILEPATH = "bfs.json"
 # JSON_FILEPATH = "22_depth_packet_capture_attempt_2_feb12th_730pm.json"
 # JSON_FILEPATH = "small.json"
-HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON = '22_hash_value_to_flows_middle_analysis.json'
+HASH_VALUE_TO_FLOWS_MIDDLE_ANALYSIS_JSON = 'bfs_middle_analysis.json'
 
-ANALYSIS_OUTPUT_FILEPATH = 'step2_22_depth_packet_capture_attempt_2_analysis.json'
+ANALYSIS_OUTPUT_FILEPATH = 'step2_bfs_flow_analysis.json'
 # ANALYSIS_OUTPUT_FILEPATH = 'middle_analysis.json'
 MY_IP='192.168.0.107'
 BLASE_IP='128.135.11.239'
@@ -157,6 +157,7 @@ def generate_flows_dict(packets,my_ip,server_ip):
         # string_flow_tuple = str(flow_tuple)
         # flows[string_flow_tuple].append(slimmed_packet_dict)
 
+    print(curr_flows)
     output_page_to_flows_mapping[curr_page_hash_value] = curr_flows
     
     return output_page_to_flows_mapping
@@ -435,7 +436,10 @@ def analyze_one_flow(flow_packet_list):
     # get total bytes
     # since we only want the seq numbers from server traffic, I add the if at the end of the generator
     server_seqs = [packet['seq'] for packet in flow_packet_list if packet['server_sent']]
-    total_bytes_from_server = max(server_seqs)
+    try:
+        total_bytes_from_server = max(server_seqs)
+    except:
+        total_bytes_from_server = 0
     return total_bytes_from_server
 
 
