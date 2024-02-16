@@ -17,7 +17,7 @@ UNWEIGHTED_GRAPH_DOTFILE = 'bfs_dotfile.dot'
 
 class PathWithError():
     def __init__(self, path = None, errors = None, max_length = 22) -> None:
-        self.MAX_LENGTH = max_length
+        self.max_length = max_length
         if path is None:
             self.hash_value_path = []
         else:
@@ -40,6 +40,14 @@ class PathWithError():
 
         self.hash_value_path.append(hash_value)
         self.percent_error_at_each_step.append(percent_error)
+
+    def pop(self) -> None:
+        """
+        method to remove the head from the path and errors
+        return None
+        """
+        self.path.pop()
+        self.percent_error_at_each_step.pop()
 
     @property
     def error(self):
@@ -66,6 +74,15 @@ class PathWithError():
 
         return output
 
+    def copy(self):
+        new_path = self.path.copy()
+        new_path_errors = self.percent_error_at_each_step.copy()
+        max_length = self.max_length
+
+        return PathWithError(path=new_path,errors=new_path_errors,max_length=max_length)
+
+        
+
     @property
     def done(self) -> bool:
         """
@@ -77,7 +94,7 @@ class PathWithError():
         if len(set(self.path)) != len(self.path):
             raise ValueError(f"duplicate found in path! set and list of path not same length")
 
-        path_done = self.path_len == self.MAX_LENGTH
+        path_done = self.path_len == self.max_length
 
         return path_done
 
@@ -107,11 +124,12 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
 
     ghost_path = json.load(open(GHOST_MOVEMENT_ANALYSIS_FILE,'r'))
 
-    all_path: List[PathWithError] = []
+    all_paths: List[PathWithError] = []
 
     def backtrack(candidate_path: PathWithError):
-        if find_solution(candidate):
-            output(candidate)
+        if candidate_path.done:
+            copied_path = candidate_path.copy()
+            all_paths.append(copied_path)
             return
         
         # iterate all possible candidates.
