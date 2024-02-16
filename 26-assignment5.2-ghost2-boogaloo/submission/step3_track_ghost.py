@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 import networkx as nx
 import json
 
@@ -14,6 +14,77 @@ ALL_PAGES_SIDECHANNEL_JSON = 'step2_bfs_flow_analysis.json'
 # UNWEIGHTED_GRAPH_DOTFILE = '22_depth_graph_dotfile.dot'
 UNWEIGHTED_GRAPH_DOTFILE = 'bfs_dotfile.dot'
 # UPDATED_GRAPH_DOTFILE = '22_depth_post_analysis_graph_dotfile.dot'
+
+class PathWithError():
+    def __init__(self, path = None, errors = None, max_length = 22) -> None:
+        self.MAX_LENGTH = max_length
+        if path is None:
+            self.hash_value_path = []
+        else:
+            self.hash_value_path = path.copy()
+        if errors is None:
+            self.percent_error_at_each_step = []
+        else:
+            self.percent_error_at_each_step = errors.copy()
+
+        self._cumulative_error = 0
+
+    def add_node_and_error(self,hash_value: int | None, percent_error: int):
+        """
+        function to add another node to a path
+        """
+        # since we were told paths are to hav all unique nodes
+        # then I can simply error if you try to add one that's bad
+        if hash_value in self.hash_value_path:
+            raise ValueError(f"trying to add hash_value already in path: {hash_value}")
+
+        self.hash_value_path.append(hash_value)
+        self.percent_error_at_each_step.append(percent_error)
+
+    @property
+    def error(self):
+        return sum(self.percent_error_at_each_step)
+
+    @property
+    def head(self):
+        return self.hash_value_path[-1]
+
+    @property
+    def path(self):
+        return self.hash_value_path
+
+    @property
+    def path_len(self):
+        return len(self.hash_value_path)
+
+    def __repr__(self):
+        output = ""
+        output += f"head      : {self.head}\n"
+        output += f"path      : {self.path}\n"
+        output += f"errors    : {self.percent_error_at_each_step}\n"
+        output += f"sum error : {self.error}\n"
+
+        return output
+
+    @property
+    def done(self) -> bool:
+        """
+        method to return if the path is complete
+        completion being a path of length 22
+
+        and some validation
+        """
+        if len(set(self.path)) != len(self.path):
+            raise ValueError(f"duplicate found in path! set and list of path not same length")
+
+        path_done = self.path_len == self.MAX_LENGTH
+
+        return path_done
+
+
+# def copy_and_extend_path(source_path: PathWithError) -> PathWithError:
+#     pass
+
 
 def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
                 ghost_movement_sidechannel_analysis_filepath=GHOST_MOVEMENT_ANALYSIS_FILE,
@@ -35,7 +106,39 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
     g = nx.DiGraph(nx.nx_pydot.read_dot(step1_graph_dotfile))
 
     ghost_path = json.load(open(GHOST_MOVEMENT_ANALYSIS_FILE,'r'))
-    print(ghost_path[0])
+
+    all_path: List[PathWithError] = []
+
+    def backtrack(candidate_path: PathWithError):
+        if find_solution(candidate):
+            output(candidate)
+            return
+        
+        # iterate all possible candidates.
+        for next_candidate in list_of_candidates:
+            if is_valid(next_candidate):
+                # try this partial candidate solution
+                place(next_candidate)
+                # given the candidate, explore further.
+                backtrack(next_candidate)
+                # backtrack
+                remove(next_candidate)
+
+    """
+    this will be a list of:
+    Tuple (
+            Tuple
+                ( 
+                 path steps as list of integers (all starting with None for the index)
+                 ,
+                 percent error in total bytes sent from server at each step
+                 as list of integers)
+                )
+            ,
+            cumulative error
+            )
+    """
+    all_paths_with_error: List[Tuple[Tuple[List[int | None],List[int]],int]] = []
 
 
     return asef
