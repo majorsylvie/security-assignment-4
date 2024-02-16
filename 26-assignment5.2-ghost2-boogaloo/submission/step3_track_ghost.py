@@ -68,6 +68,7 @@ class PathWithError():
 
     def __repr__(self):
         output = ""
+        output += f"step      : {self.step}\n"
         output += f"head      : {self.head}\n"
         output += f"path      : {self.path}\n"
         output += f"errors    : {self.percent_error_at_each_step}\n"
@@ -121,6 +122,7 @@ class PathWithError():
 
 def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
                 ghost_movement_sidechannel_analysis_filepath=GHOST_MOVEMENT_ANALYSIS_FILE,
+                all_pages_sidechannel_analysis_filepath= ALL_PAGES_SIDECHANNEL_JSON,
                 estimated_path_outfile_path=PATH_GUESS_OUTPUT_FILE,
                 ) -> List[str | int]:
     """
@@ -138,7 +140,8 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
     """
     g = nx.DiGraph(nx.nx_pydot.read_dot(step1_graph_dotfile))
 
-    ghost_path = json.load(open(GHOST_MOVEMENT_ANALYSIS_FILE,'r'))
+    ghost_path = json.load(open(ghost_movement_sidechannel_analysis_filepath,'r'))
+    all_pages_sidechannel_analysis = json.load(open(all_pages_sidechannel_analysis_filepath,'r'))
 
     all_paths: List[PathWithError] = []
 
@@ -155,6 +158,9 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
         curr_node = candidate_path.head
         neighbors = g.neighbors(curr_node)
 
+        ranked_neighbors = score_and_order_neighbors(graph=g,node_list=neighbors,node_sidechannel_info=all_pages_sidechannel_analysis,ghost_path=ghost_path,step=candidate_path.step)
+
+        return
         # iterate all possible candidates.
         for next_candidate in list_of_candidates:
             if is_valid(next_candidate):
@@ -168,7 +174,43 @@ def track_ghost(step1_graph_dotfile=UNWEIGHTED_GRAPH_DOTFILE,
 
     backtrack(starting_path)
 
-    return asef
+    return []  
+
+def score_and_order_neighbors(graph,node_list,node_sidechannel_info,ghost_path,step):
+    """
+    function to take in some list of nodes in blase.courses
+    and rank them by some "score" that's meant to order them 
+    by how good of a match they are for the current step in 
+    the ghost traffic
+
+    Inputs:
+        graph: unweighted DiGraph from UNWEIGHTED_GRAPH_DOTFILE
+
+        node_list: a list of strings that represents nodes in the 
+                   graph of websites from UNWEIGHTED_GRAPH_DOTFILE
+
+        ghost_path: the list of 22 pages from the ghost's 2024 traffic
+                    can be indexed from [0,21], with 
+                        ghost_path[0] being the index, 
+                        ghost_path[1] being the 5235101353139427677
+                        ghost_path[2] (likely) being 6845881726168158209
+                            as calculated by my part1 code
+
+        step: integer index representing what step we are on
+              can directly be used to index the ghost_path
+    """
+    ghost_step_side_channel_info = ghost_path[step]
+    node_to_total_bytes_percent_error_map = {}
+
+    node_list = list(node_list)
+    print(node_list[0])
+    for node in node_list:
+        print(f"node: {node}, step: {step}")
+
+        curr_sidechannel_info = node_sidechannel_info.get(node, 'NOTHING FOUND :(')
+        print(curr_sidechannel_info)
+
+    return node_list
 
 # def update_sitemap_graph_with_sidechannel_analysis(input_graph_path=UNWEIGHTED_GRAPH_DOTFILE,
 #                                                    output_graph_dotfile_path=UPDATED_GRAPH_DOTFILE,
