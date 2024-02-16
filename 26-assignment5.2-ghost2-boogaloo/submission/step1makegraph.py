@@ -90,7 +90,11 @@ def get_neighbors_from_hash_value(hash=None):
     url = make_url(ghost_hash=hash)
 
     # url = "https://blase.courses/9120766452599220771.html"
-    html = requests.get(str(url))
+    try:
+        html = requests.get(str(url))
+    except Exception as e:
+        print(f"error, sad. {e}")
+        return []
 
     # beautiful soup need the text of the webpage so it can
     # scrape anything
@@ -125,8 +129,42 @@ def get_neighbors_from_hash_value(hash=None):
 
 def dfs(start=None,depth_limit=22):
     mapping = {}
-    dfs_recursive_helper(mapping=mapping, curr_depth=0,depth_limit=depth_limit)
+    do_bfs(mapping=mapping,depth_limit=22)
+    # dfs_recursive_helper(mapping=mapping, curr_depth=0,depth_limit=depth_limit)
     return mapping
+
+def do_bfs(mapping,depth_limit):
+    """
+
+    """
+    visited = set()
+    queue = [] 
+    # Add the source node in 
+
+    # visited and enqueue it 
+    # None being the index
+    queue.append(None) 
+
+    neighbors = get_neighbors_from_hash_value(hash=curr_page)
+    while queue: 
+
+        # Dequeue a vertex from  
+        # queue and print it 
+        curr_page = queue.pop(0) 
+
+        # visit website here:
+        neighbors = get_neighbors_from_hash_value(hash=curr_page)
+
+        print (curr_page, end = " ") 
+
+        mapping[curr_page] = neighbors
+
+        # BFS traverse
+        for neighbor in neighbors:
+            if neighbor not in visited: 
+                queue.append(neighbor) 
+                visited.add(curr_page) 
+  
 
 def dfs_recursive_helper(mapping: Dict[int,int] = None,
                          curr_page: Optional[int]=None,
@@ -160,6 +198,7 @@ def dfs_recursive_helper(mapping: Dict[int,int] = None,
     if mapping is None:
         mapping = {}
 
+    print(f"{curr_page}\t{curr_depth}")
     neighbors = get_neighbors_from_hash_value(hash=curr_page)
 
     # now that we've recorded the neighbors, we've successfully visited this link
@@ -183,11 +222,11 @@ def dfs_recursive_helper(mapping: Dict[int,int] = None,
     # and clicking on another node (setting current node to the neighbor hash value,
     # and increasing click count by one)
     for hash_value in neighbors:
-        if hash_value in visited:
-            continue
+        # if hash_value in visited:
+        #     continue
         new_depth = curr_depth + 1
         # recurse!! woooo
-        dfs_recursive_helper( curr_page=hash_value, visited=visited, mapping=mapping, curr_depth=new_depth, depth_limit=depth_limit )
+        dfs_recursive_helper( curr_page=hash_value, visited=visited.copy(), mapping=mapping, curr_depth=new_depth, depth_limit=depth_limit )
 
 
 
