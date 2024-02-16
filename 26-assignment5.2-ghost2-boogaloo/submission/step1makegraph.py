@@ -127,13 +127,13 @@ def get_neighbors_from_hash_value(hash=None):
 
     return output_list
 
-def dfs(start=None,depth_limit=22):
+def bfs(start=None):
     mapping = {}
-    do_bfs(mapping=mapping,depth_limit=22)
+    do_bfs(mapping=mapping)
     # dfs_recursive_helper(mapping=mapping, curr_depth=0,depth_limit=depth_limit)
     return mapping
 
-def do_bfs(mapping,depth_limit):
+def do_bfs(mapping):
     """
 
     """
@@ -145,17 +145,17 @@ def do_bfs(mapping,depth_limit):
     # None being the index
     queue.append(None) 
 
-    neighbors = get_neighbors_from_hash_value(hash=curr_page)
     while queue: 
 
         # Dequeue a vertex from  
         # queue and print it 
         curr_page = queue.pop(0) 
+        print (curr_page) 
+
 
         # visit website here:
         neighbors = get_neighbors_from_hash_value(hash=curr_page)
 
-        print (curr_page, end = " ") 
 
         mapping[curr_page] = neighbors
 
@@ -164,6 +164,8 @@ def do_bfs(mapping,depth_limit):
             if neighbor not in visited: 
                 queue.append(neighbor) 
                 visited.add(curr_page) 
+
+    return mapping
   
 
 def dfs_recursive_helper(mapping: Dict[int,int] = None,
@@ -270,19 +272,19 @@ def make_digraph_from_json(json_filepath='22_depth_traversal.json'):
     return G
 
 
-def traverse_and_save_json(depth_limit=22):
-    mapping = dfs(depth_limit=depth_limit)
+def traverse_and_save_json():
+    mapping = bfs()
     # print(mapping)
-    filepath = f'{depth_limit}_depth_traversal.json'
+    filepath = f'depth_traversal.json'
     with open(filepath, 'w') as writefile:
         json.dump(mapping,fp=writefile,indent=2)
 
     return filepath
 
 if __name__ == "__main__":
-    json_filepath = traverse_and_save_json(depth_limit=22)
-    # json_filepath = '22_depth_traversal.json'
+    json_filepath = traverse_and_save_json()
+
     G = make_digraph_from_json(json_filepath)
-    path = '22_depth_graph_dotfile.dot'
+
+    path = 'bfs_dotfile.dot'
     nx.drawing.nx_pydot.write_dot(G,path)
-    # make_digraph_from_json('22_depth_traversal.json')
